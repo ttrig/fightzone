@@ -1,0 +1,17 @@
+/**
+ * Custom content styles for TinyMCE.
+ */
+
+// Default tinymce content
+@import '~/tinymce/skins/content/default/content.min.css';
+
+// Variables
+@import "_variables";
+
+// Bootstrap
+$body-bg: #fff;
+@import '~bootstrap/scss/bootstrap';
+
+body {
+    margin: 1rem;
+}

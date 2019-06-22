@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<ruleset name="fightzone.se">
+    <description>fightzone.se coding standard.</description>
+
+    <arg name="colors"/>
+    <arg value="p" />
+
+    <file>.</file>
+
+    <exclude-pattern>vendor/</exclude-pattern>
+    <exclude-pattern>node_modules/</exclude-pattern>
+    <exclude-pattern>storage/</exclude-pattern>
+    <exclude-pattern>bootstrap/cache</exclude-pattern>
+    <exclude-pattern>*\.(?!php$)</exclude-pattern>
+
+    <rule ref="PSR12"></rule>
+
+    <rule ref="PSR1.Classes.ClassDeclaration.MissingNamespace">
+        <exclude-pattern>database/</exclude-pattern>
+    </rule>
+
+    <rule ref="Generic.Files.LineLength.TooLong">
+        <exclude-pattern>database/seeds/</exclude-pattern>
+    </rule>
+
+    <rule ref="PSR1.Methods.CamelCapsMethodName.NotCamelCaps">
+        <exclude-pattern>tests/</exclude-pattern>
+    </rule>
+</ruleset>

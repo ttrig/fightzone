@@ -56,13 +56,8 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'info@fightzone.se'),
+        'address' => env('MAIL_FROM_ADDRESS', 'noreply@fightzone.se'),
         'name'    => env('MAIL_FROM_NAME', 'Fightzone'),
-    ],
-
-    # Global "To" Address
-    'to' => [
-        'address' => env('MAIL_TO_ADDRESS', 'developer@localhost'),
     ],
 
     /*

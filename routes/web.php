@@ -23,6 +23,15 @@ Route::get('nogi', 'TrainingController')->name('nogi');
 Route::get('sac', 'TrainingController')->name('sac');
 Route::get('gym', 'TrainingController')->name('gym');
 
+# payment
+Route::group(['prefix' => 'payment', 'as' => 'payment.'], function () {
+    Route::get('', 'PaymentController@index')->name('index');
+    Route::get('monthly-costs', 'PaymentController@getMonthlyCosts')
+        ->name('monthly-costs');
+    Route::get('checkout/{payment_article}', 'PaymentController@checkout')
+        ->name('checkout');
+});
+
 # auth
 Route::group(['namespace' => 'Auth', 'middleware' => 'english'], function () {
     Route::group(['prefix' => 'login'], function () {
@@ -41,10 +50,11 @@ Route::group([
 ], function () {
     Route::get('', 'IndexController')->name('index');
 
-    Route::resource('user', 'UserController');
-    Route::resource('alert', 'AlertController');
+    Route::resource('user', 'UserController')->except('show');
+    Route::resource('alert', 'AlertController')->except('show');
     Route::resource('text', 'TextController')->only(['index', 'edit', 'update']);
-    Route::resource('event', 'EventController');
+    Route::resource('event', 'EventController')->except('show');
+    Route::resource('payment_article', 'PaymentArticleController')->except('show');
 
     Route::group([
         'prefix' => 'price',

@@ -24,6 +24,11 @@ $price = function(string $discipline, string $category) use ($prices): string {
     </div>
   </div>
 
+  <a href="{{ route('payment.index') }}" class="btn btn-dark mb-3">
+    <i class="fa fa-fw fa-shopping-cart"></i>
+    @lang('app.prices.payment_button')
+  </a>
+
   <div class="row">
     <div class="col-md-12">
       <table class="table">

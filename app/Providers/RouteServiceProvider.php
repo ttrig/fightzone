@@ -2,12 +2,7 @@
 
 namespace App\Providers;
 
-use App\Models\Activity;
-use App\Models\Alert;
-use App\Models\Event;
-use App\Models\Price;
-use App\Models\Text;
-use App\Models\User;
+use App\Models;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Route;
 
@@ -19,12 +14,13 @@ class RouteServiceProvider extends ServiceProvider
     {
         parent::boot();
 
-        Route::model('user', User::class);
-        Route::model('activity', Activity::class);
-        Route::model('event', Event::class);
-        Route::model('price', Price::class);
-        Route::model('alert', Alert::class);
-        Route::model('text', Text::class);
+        Route::model('user', Models\User::class);
+        Route::model('activity', Models\Activity::class);
+        Route::model('event', Models\Event::class);
+        Route::model('price', Models\Price::class);
+        Route::model('alert', Models\Alert::class);
+        Route::model('text', Models\Text::class);
+        Route::model('payment_article', Models\PaymentArticle::class);
     }
 
     public function map()

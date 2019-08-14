@@ -62,11 +62,41 @@ return [
     # page: prices
     'prices' => [
         'title'  => 'Priser',
+        'payment_button' => 'Betala här',
         'adults' => 'Vuxna',
         'youths' => 'Ungdomar',
         'year'   => 'år',
         'months' => '1 månad|:count månader',
         'bjj'    => 'BJJ och Combo',
+    ],
+
+    # page: payment
+    'payment' => [
+        'index' => [
+            'title' => 'Betala',
+            'no_articles' => 'Det finns ingenting att köpa just nu.',
+            'name' => 'Namn',
+            'price' => 'Pris',
+            'from_price' => 'Delbetalning/månad',
+        ],
+        'checkout' => [
+            'title' => 'Kassa',
+            'your_order' => 'Din order',
+            'name' => 'Namn',
+            'price' => 'Pris',
+            'description' => 'Beskrivning',
+            'back' => 'Tillbaka',
+            'not_loaded' => 'Kassan kunde inte laddas, försök igen senare.',
+        ],
+        'success' => [
+            'text' => 'Tack för ditt köp och välkommen till Fightzone Malmö',
+        ],
+        'failed' => [
+            'text' => 'Någonting gick fel, försök igen.',
+        ],
+        'cancelled' => [
+            'text' => 'Betalningen avbröts.',
+        ],
     ],
 
     # page: schedule
@@ -125,6 +155,7 @@ return [
     ],
 
     # random
+    'back' => 'Tillbaka',
     'close' => 'Stäng',
     'sponsors' => 'sponsorer',
 

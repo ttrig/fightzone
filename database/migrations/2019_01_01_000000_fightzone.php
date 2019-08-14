@@ -37,6 +37,19 @@ class Fightzone extends Migration
             $table->timestamps();
         });
 
+        Schema::create('payment_articles', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->integer('number');
+            $table->integer('price');
+            $table->text('name_en');
+            $table->text('name_sv');
+            $table->text('content_en');
+            $table->text('content_sv');
+            $table->boolean('active');
+            $table->timestamps();
+            $table->softDeletes();
+        });
+
         Schema::create('prices', function (Blueprint $table) {
             $table->increments('id')->unsigned();
             $table->unsignedInteger('activity_id')->index();

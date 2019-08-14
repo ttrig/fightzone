@@ -2,6 +2,8 @@
 
 namespace Tests\Unit\Traits;
 
+use App\Models\Alert;
+use App\Models\Price;
 use App\Models\Text;
 use App\Models\User;
 use App\Transformers\AuditTransformer;
@@ -12,13 +14,21 @@ class AuditTransformerTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function test_happy_path()
+    public function test_list()
     {
-        $user = factory(User::class)->create();
+        $alert = factory(Alert::class)->create();
+        $price = factory(Price::class)->create();
         $text = factory(Text::class)->create();
+        $user = factory(User::class)->create();
 
-        $text->audits()->create([
+        $alert->audits()->create([
             'event' => 'created',
+            'user_id' => $user->id,
+            'user_type' => get_class($user),
+        ]);
+
+        $price->audits()->create([
+            'event' => 'updated',
             'user_id' => $user->id,
             'user_type' => get_class($user),
         ]);
@@ -37,18 +47,33 @@ class AuditTransformerTest extends TestCase
             'new_values' => [],
         ]);
 
-        $audits = $text->audits->merge($user->audits);
-        $result = (new AuditTransformer())->list($audits);
-        $result = collect($result)->toArray();
+        $audits = $alert->audits
+            ->merge($price->audits)
+            ->merge($text->audits)
+            ->merge($user->audits);
 
-        $this->assertEquals($result[0]['name'], 'text');
-        $this->assertEquals($result[0]['icon'], 'fa fa-plus');
+        [
+            $createdAlert,
+            $updatedPrice,
+            $updatedText,
+            $deletedUser,
+        ] = (new AuditTransformer())->list($audits);
 
-        $this->assertEquals($result[1]['icon'], 'fa fa-pencil-alt');
-        $this->assertEquals($result[1]['route'], 'http://localhost/admin/text/1/edit');
+        $this->assertEquals('alert', $createdAlert['name']);
+        $this->assertEquals('fa fa-plus', $createdAlert['icon']);
+        $this->assertEquals('http://localhost/admin/alert/1/edit', $createdAlert['route']);
 
-        $this->assertEquals($result[2]['name'], 'user');
-        $this->assertEquals($result[2]['icon'], 'fa fa-trash');
-        $this->assertEquals($result[2]['context'], $user->email);
+        $this->assertEquals('prices', $updatedPrice['name']);
+        $this->assertEquals('fa fa-pencil-alt', $updatedPrice['icon']);
+        $this->assertEquals('http://localhost/admin/price', $updatedPrice['route']);
+
+        $this->assertEquals('text', $updatedText['name']);
+        $this->assertEquals('fa fa-pencil-alt', $updatedText['icon']);
+        $this->assertEquals('http://localhost/admin/text/1/edit', $updatedText['route']);
+
+        $this->assertEquals('user', $deletedUser['name']);
+        $this->assertEquals('fa fa-trash', $deletedUser['icon']);
+        $this->assertNull($deletedUser['route']);
+        $this->assertEquals($user->email, $deletedUser['context']);
     }
 }

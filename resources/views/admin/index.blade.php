@@ -36,6 +36,11 @@
       <strong>Prices</strong>
       <span class="d-none d-md-inline"> - Update prices.</span>
     </a>
+    <a href="{{ route('admin.payment_article.index') }}" class="list-group-item list-group-item-action">
+      <i class="mr-2 fas fa-fw fa-shopping-cart"></i>
+      <strong>Payment articles</strong>
+      <span class="d-none d-md-inline"> - Payable articles in the shop.</span>
+    </a>
     <a href="{{ route('admin.alert.index') }}" class="list-group-item list-group-item-action">
       <i class="mr-2 fas fa-fw fa-comment"></i>
       <strong>Alerts</strong>
@@ -51,8 +56,8 @@
     </a>
     <a href="#" class="list-group-item list-group-item-action disabled" tabindex="-1" aria-disabled="true">
       <i class="mr-2 fas fa-fw fa-newspaper"></i>
-      <strong>Articles</strong>
-      <span class="d-none d-md-inline"> - Create and update articles on the "news" page.</span>
+      <strong>News</strong>
+      <span class="d-none d-md-inline"> - Create and update news articles.</span>
     </a>
   </div>
 

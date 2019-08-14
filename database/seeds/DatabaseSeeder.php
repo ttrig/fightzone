@@ -3,6 +3,7 @@
 use App\Models\Activity;
 use App\Models\Alert;
 use App\Models\Event;
+use App\Models\PaymentArticle;
 use App\Models\Price;
 use App\Models\Text;
 use App\Models\User;
@@ -17,6 +18,7 @@ class DatabaseSeeder extends Seeder
         $this->seedUsers();
         $this->seedActivities();
         $this->seedAlerts();
+        $this->seedPaymentArticles();
         $this->seedPrices();
         $this->seedSchedule();
         $this->seedTexts();
@@ -51,6 +53,24 @@ class DatabaseSeeder extends Seeder
     {
         factory(Alert::class)->state('active')->create();
         factory(Alert::class)->state('inactive')->create();
+    }
+
+    private function seedPaymentArticles()
+    {
+        factory(PaymentArticle::class)->create([
+            'name_en' => 'BJJ 1 year',
+            'name_sv' => 'BJJ 1 år',
+            'price' => '5000',
+        ]);
+
+        factory(PaymentArticle::class)->create([
+            'name_en' => 'BJJ 6 months',
+            'name_sv' => 'BJJ 6 månader',
+            'price' => '3000',
+        ]);
+
+        factory(PaymentArticle::class, 2)->create();
+        factory(PaymentArticle::class, 2)->state('inactive')->create();
     }
 
     private function seedPrices()
@@ -92,5 +112,7 @@ class DatabaseSeeder extends Seeder
 
         factory(Text::class)->state('extra-long')->create(['route' => 'kids_bjj', 'name' => 'info']);
         factory(Text::class)->state('extra-long')->create(['route' => 'kids_boxing', 'name' => 'info']);
+
+        factory(Text::class)->state('long')->create(['route' => 'payment.index', 'name' => 'info']);
     }
 }

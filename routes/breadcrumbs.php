@@ -23,6 +23,24 @@ Breadcrumbs::for('admin.alert.edit', function ($trail, $alert) {
     $trail->push('Update', route('admin.alert.edit', $alert));
 });
 
+// admin > payment_articles
+Breadcrumbs::for('admin.payment_article.index', function ($trail) {
+    $trail->parent('admin.index');
+    $trail->push('Articles', route('admin.payment_article.index'));
+});
+
+// admin > payment_articles > create
+Breadcrumbs::for('admin.payment_article.create', function ($trail) {
+    $trail->parent('admin.payment_article.index');
+    $trail->push('Create', route('admin.payment_article.create'));
+});
+
+// admin > payment_articles > edit
+Breadcrumbs::for('admin.payment_article.edit', function ($trail, $article) {
+    $trail->parent('admin.payment_article.index');
+    $trail->push('Update', route('admin.payment_article.edit', $article));
+});
+
 // admin > users
 Breadcrumbs::for('admin.user.index', function ($trail) {
     $trail->parent('admin.index');
@@ -82,7 +100,6 @@ Breadcrumbs::for('admin.kids_event.edit', function ($trail, $event) {
     $trail->parent('admin.kids_event.index');
     $trail->push('Edit', route('admin.kids_event.edit', $event));
 });
-
 
 // admin > texts
 Breadcrumbs::for('admin.text.index', function ($trail) {

@@ -19,6 +19,10 @@ class SitemapController extends Controller
             'changefreq' => 'daily',
             'priority' => '0.7',
         ],
+        'payment.index' => [
+            'changefreq' => 'monthly',
+            'priority' => '0.5',
+        ],
         'join' => [
             'changefreq' => 'monthly',
             'priority' => '0.4',

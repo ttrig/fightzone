@@ -43,7 +43,7 @@ class SitemapController extends Controller
             'changefreq' => 'monthly',
             'priority' => '0.4',
         ],
-        'youth_boxing' => [
+        'kids_boxing' => [
             'changefreq' => 'monthly',
             'priority' => '0.4',
         ],

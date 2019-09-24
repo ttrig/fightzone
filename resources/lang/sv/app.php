@@ -28,7 +28,7 @@ return [
         'nogi' => 'Submission wrestling',
         'sac' => 'Styrka och kondition',
         'gym' => 'Gym',
-        'youth_boxing' => 'Ungdomsboxning',
+        'kids_boxing' => 'Barnboxning',
         'kids_bjj' => 'Barn BJJ',
     ],
 
@@ -96,8 +96,8 @@ return [
     ],
 
     # page: youth-boxing
-    'youth_boxing' => [
-        'title' => 'Ungdomsboxning',
+    'kids_boxing' => [
+        'title' => 'Barnboxning',
         'more' => 'Läs mer om boxning',
     ],
 

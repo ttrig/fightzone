@@ -91,6 +91,6 @@ class DatabaseSeeder extends Seeder
         factory(Text::class)->state('long')->create(['route' => 'about', 'name' => 'facility']);
 
         factory(Text::class)->state('extra-long')->create(['route' => 'kids_bjj', 'name' => 'info']);
-        factory(Text::class)->state('extra-long')->create(['route' => 'youth_boxing', 'name' => 'info']);
+        factory(Text::class)->state('extra-long')->create(['route' => 'kids_boxing', 'name' => 'info']);
     }
 }

@@ -21,7 +21,7 @@ class Alert extends AuditableModel
         'prices',
         'schedule',
         'kids_bjj',
-        'youth_boxing',
+        'kids_boxing',
     ];
 
     protected $guarded = [];

@@ -5,7 +5,7 @@ Route::get('lang/{lang}', 'HomeController@lang')->name('lang');
 Route::get('schedule', 'ScheduleController')->name('schedule');
 Route::get('prices', 'PriceController')->name('prices');
 Route::get('kids-bjj', 'KidsBjjController')->name('kids_bjj');
-Route::get('youth-boxing', 'YouthBoxingController')->name('youth_boxing');
+Route::get('kids-boxing', 'KidsBoxingController')->name('kids_boxing');
 Route::get('join', 'JoinController')->name('join');
 Route::get('about', 'AboutController')->name('about');
 Route::view('contact', 'contact')->name('contact');

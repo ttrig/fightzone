@@ -6,7 +6,7 @@ use Closure;
 
 class SetLocale
 {
-    const AVAILABLE = [
+    public const AVAILABLE = [
         'en',
         'sv'
     ];

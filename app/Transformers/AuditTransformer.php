@@ -8,13 +8,13 @@ use OwenIt\Auditing\Models\Audit;
 
 class AuditTransformer
 {
-    const ICONS = [
+    public const ICONS = [
         'created' => 'fa fa-plus',
         'updated' => 'fa fa-pencil-alt',
         'deleted' => 'fa fa-trash',
     ];
 
-    const TYPES = [
+    public const TYPES = [
         Models\Alert::class => [
             'route' => ['admin.alert.edit'],
             'name' => 'alert',

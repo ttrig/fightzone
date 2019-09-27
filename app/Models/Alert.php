@@ -9,14 +9,14 @@ class Alert extends AuditableModel
     use HasContent;
 
     // color to class-name mapping
-    const COLORS = [
+    public const COLORS = [
         'red'    => 'danger',
         'yellow' => 'warning',
         'green'  => 'success',
         'blue'   => 'info',
     ];
 
-    const AVAILABLE_ROUTES = [
+    public const AVAILABLE_ROUTES = [
         'home',
         'prices',
         'schedule',

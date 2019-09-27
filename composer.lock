@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e6715c94a3636b7c1ff9c151fce2450a",
+    "content-hash": "1822fa2b141db6a5e0015042a25108d4",
     "packages": [
         {
             "name": "davejamesmiller/laravel-breadcrumbs",
@@ -3420,16 +3420,16 @@
         },
         {
             "name": "ttrig/laravel-billmate",
-            "version": "v0.2.1",
+            "version": "v0.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ttrig/laravel-billmate.git",
-                "reference": "c0aa338766fda6e159a5eb29084cef728f72c56e"
+                "reference": "603dd9889211fa97209666194cd4b3e169ade01f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ttrig/laravel-billmate/zipball/c0aa338766fda6e159a5eb29084cef728f72c56e",
-                "reference": "c0aa338766fda6e159a5eb29084cef728f72c56e",
+                "url": "https://api.github.com/repos/ttrig/laravel-billmate/zipball/603dd9889211fa97209666194cd4b3e169ade01f",
+                "reference": "603dd9889211fa97209666194cd4b3e169ade01f",
                 "shasum": ""
             },
             "require": {
@@ -3475,7 +3475,7 @@
                 "payment",
                 "webshop"
             ],
-            "time": "2019-09-04T15:14:15+00:00"
+            "time": "2019-09-25T08:55:11+00:00"
         },
         {
             "name": "vlucas/phpdotenv",

@@ -14,9 +14,12 @@ return [
                 . 'p[style|class],'
                 . 'span[style|class],'
                 . 'img[src|class],'
-                . 'h1,h2,h3,h4,h5,',
+                . 'h1,h2,h3,h4,h5,'
+                . 'table[class],thead[class],tbody,tr,th[colspan],td[colspan]',
             'CSS.AllowedProperties' => 'font-size,font-weight,font-style,text-decoration,padding-left,color,text-align',
             'Attr.AllowedClasses' => implode(',', [
+                'table',
+                'thead-light',
                 'text-center',
                 'badge',
                 'badge-default',

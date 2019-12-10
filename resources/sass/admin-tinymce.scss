@@ -15,3 +15,8 @@ $body-bg: #fff;
 body {
     margin: 1rem;
 }
+
+.mce-content-body td[data-mce-selected],
+.mce-content-body th[data-mce-selected] {
+    background-color: #b4d7ff !important;
+}

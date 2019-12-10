@@ -3,7 +3,6 @@
 namespace Tests\Unit\Traits;
 
 use App\Models\Alert;
-use App\Models\Price;
 use App\Models\Text;
 use App\Models\User;
 use App\Transformers\AuditTransformer;
@@ -17,18 +16,11 @@ class AuditTransformerTest extends TestCase
     public function test_list()
     {
         $alert = factory(Alert::class)->create();
-        $price = factory(Price::class)->create();
         $text = factory(Text::class)->create();
         $user = factory(User::class)->create();
 
         $alert->audits()->create([
             'event' => 'created',
-            'user_id' => $user->id,
-            'user_type' => get_class($user),
-        ]);
-
-        $price->audits()->create([
-            'event' => 'updated',
             'user_id' => $user->id,
             'user_type' => get_class($user),
         ]);
@@ -48,13 +40,11 @@ class AuditTransformerTest extends TestCase
         ]);
 
         $audits = $alert->audits
-            ->merge($price->audits)
             ->merge($text->audits)
             ->merge($user->audits);
 
         [
             $createdAlert,
-            $updatedPrice,
             $updatedText,
             $deletedUser,
         ] = (new AuditTransformer())->list($audits);
@@ -62,10 +52,6 @@ class AuditTransformerTest extends TestCase
         $this->assertEquals('alert', $createdAlert['name']);
         $this->assertEquals('fa fa-plus', $createdAlert['icon']);
         $this->assertEquals('http://localhost/admin/alert/1/edit', $createdAlert['route']);
-
-        $this->assertEquals('prices', $updatedPrice['name']);
-        $this->assertEquals('fa fa-pencil-alt', $updatedPrice['icon']);
-        $this->assertEquals('http://localhost/admin/price', $updatedPrice['route']);
 
         $this->assertEquals('text', $updatedText['name']);
         $this->assertEquals('fa fa-pencil-alt', $updatedText['icon']);

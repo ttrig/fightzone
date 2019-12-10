@@ -4,7 +4,6 @@ use App\Models\Activity;
 use App\Models\Alert;
 use App\Models\Event;
 use App\Models\PaymentArticle;
-use App\Models\Price;
 use App\Models\Text;
 use App\Models\User;
 use Illuminate\Database\Seeder;
@@ -19,7 +18,6 @@ class DatabaseSeeder extends Seeder
         $this->seedActivities();
         $this->seedAlerts();
         $this->seedPaymentArticles();
-        $this->seedPrices();
         $this->seedSchedule();
         $this->seedTexts();
     }
@@ -71,15 +69,6 @@ class DatabaseSeeder extends Seeder
 
         factory(PaymentArticle::class, 2)->create();
         factory(PaymentArticle::class, 2)->state('inactive')->create();
-    }
-
-    private function seedPrices()
-    {
-        $this->activities->only(['bjj', 'boxing', 'kickboxing'])
-            ->each(function ($activity) {
-                factory(Price::class)->create(['activity_id' => $activity->id]);
-            })
-        ;
     }
 
     private function seedSchedule()

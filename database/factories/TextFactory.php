@@ -39,3 +39,15 @@ $factory->state(Text::class, 'extra-long', function (Faker $faker) {
         'content_en' => '<p>' . $faker->paragraph(23) . '</p><p>' . $faker->paragraph(23) . '</p>',
     ];
 });
+
+$factory->state(Text::class, 'table', function (Faker $faker) {
+    $html = '<table class="table">'
+          . '<thead class="thead-light"><tr><th>Foo</th><th>Bar</th></tr></thead>'
+          . '<tbody><tr><td>Foz</td><td>Baz</td></tr></tbody>'
+          . '</table>';
+
+    return [
+        'content_sv' => $html,
+        'content_en' => $html,
+    ];
+});

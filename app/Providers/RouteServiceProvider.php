@@ -17,7 +17,6 @@ class RouteServiceProvider extends ServiceProvider
         Route::model('user', Models\User::class);
         Route::model('activity', Models\Activity::class);
         Route::model('event', Models\Event::class);
-        Route::model('price', Models\Price::class);
         Route::model('alert', Models\Alert::class);
         Route::model('text', Models\Text::class);
         Route::model('payment_article', Models\PaymentArticle::class);

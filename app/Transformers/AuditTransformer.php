@@ -16,23 +16,19 @@ class AuditTransformer
 
     public const TYPES = [
         Models\Alert::class => [
-            'route' => ['admin.alert.edit'],
+            'route' => 'admin.alert.edit',
             'name' => 'alert',
         ],
         Models\Event::class => [
-            'route' => ['admin.event.edit'],
+            'route' => 'admin.event.edit',
             'name' => 'event',
         ],
-        Models\Price::class => [
-            'route' => 'admin.price.index',
-            'name' => 'prices',
-        ],
         Models\Text::class => [
-            'route' => ['admin.text.edit'],
+            'route' => 'admin.text.edit',
             'name' => 'text',
         ],
         Models\User::class => [
-            'route' => ['admin.user.edit'],
+            'route' => 'admin.user.edit',
             'name' => 'user',
             'context' => [
                 'created' => 'email.new',
@@ -40,7 +36,7 @@ class AuditTransformer
             ],
         ],
         Models\PaymentArticle::class => [
-            'route' => ['admin.payment_article.edit'],
+            'route' => 'admin.payment_article.edit',
             'name' => 'payment article',
             'context' => [
                 'created' => 'number.new',
@@ -64,10 +60,7 @@ class AuditTransformer
                 if ($audit->event === 'deleted') {
                     $audit->route = null;
                 } else {
-                    $audit->route = is_array($type['route'])
-                        ? route($type['route'][0], $audit->auditable_id)
-                        : route($type['route'])
-                    ;
+                    $audit->route = route($type['route'], $audit->auditable_id);
                 }
 
                 if (isset($type['context'][$audit->event])) {

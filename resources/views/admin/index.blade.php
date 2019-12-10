@@ -31,11 +31,6 @@
       <strong>Schedule</strong>
       <span class="d-none d-md-inline"> - Update schedule.</span>
     </a>
-    <a href="{{ route('admin.price.index') }}" class="list-group-item list-group-item-action">
-      <i class="mr-2 fas fa-fw fa-dollar-sign"></i>
-      <strong>Prices</strong>
-      <span class="d-none d-md-inline"> - Update prices.</span>
-    </a>
     <a href="{{ route('admin.payment_article.index') }}" class="list-group-item list-group-item-action">
       <i class="mr-2 fas fa-fw fa-shopping-cart"></i>
       <strong>Payment articles</strong>

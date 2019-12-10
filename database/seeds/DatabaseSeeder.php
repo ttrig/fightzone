@@ -100,6 +100,7 @@ class DatabaseSeeder extends Seeder
 
         factory(Text::class)->create(['route' => 'prices', 'name' => 'info']);
         factory(Text::class)->create(['route' => 'prices', 'name' => 'combo']);
+        factory(Text::class)->state('table')->create(['route' => 'prices', 'name' => 'tables']);
 
         $this->activities->each(function ($activity, $slug) {
             factory(Text::class)->create(['route' => $slug, 'name' => 'info']);

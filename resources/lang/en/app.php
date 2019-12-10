@@ -63,11 +63,6 @@ return [
     'prices' => [
         'title'  => 'Prices',
         'payment_button' => 'Pay here',
-        'adults' => 'Adults',
-        'youths' => 'Youths',
-        'year'   => 'year',
-        'months' => '1 month|:count months',
-        'bjj'    => 'BJJ and Combo',
     ],
 
     # page: payment

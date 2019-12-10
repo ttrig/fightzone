@@ -63,11 +63,6 @@ return [
     'prices' => [
         'title'  => 'Priser',
         'payment_button' => 'Betala här',
-        'adults' => 'Vuxna',
-        'youths' => 'Ungdomar',
-        'year'   => 'år',
-        'months' => '1 månad|:count månader',
-        'bjj'    => 'BJJ och Combo',
     ],
 
     # page: payment

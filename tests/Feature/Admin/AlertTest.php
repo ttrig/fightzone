@@ -95,16 +95,6 @@ class AlertTest extends TestCase
         ;
     }
 
-    public function test_update_missing_alert()
-    {
-        $alert = factory(Alert::class)->make();
-
-        $this->post(route('admin.alert.update', $alert), [])
-            ->assertSessionHasErrors()
-            ->assertRedirect('/')
-        ;
-    }
-
     public function test_update_happy_path()
     {
         $alert = factory(Alert::class)->create([

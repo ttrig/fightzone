@@ -55,12 +55,4 @@ Route::group([
     Route::resource('text', 'TextController')->only(['index', 'edit', 'update']);
     Route::resource('event', 'EventController')->except('show');
     Route::resource('payment_article', 'PaymentArticleController')->except('show');
-
-    Route::group([
-        'prefix' => 'price',
-        'as'     => 'price.',
-    ], function () {
-        Route::get('', 'PriceController@index')->name('index');
-        Route::post('', 'PriceController@update')->name('update');
-    });
 });

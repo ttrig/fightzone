@@ -116,7 +116,6 @@ return [
         'title' => 'Barn BJJ',
         'modal_schedule_show' => 'Visa schema',
         'modal_schedule_title' => 'Schema barn BJJ',
-        'modal_schedule_close' => 'Stäng',
         'more' => 'Läs mer om BJJ',
     ],
 

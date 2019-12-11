@@ -6,7 +6,7 @@ use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
-class IndexTest extends TestCase
+class LoginTest extends TestCase
 {
     use RefreshDatabase;
 
@@ -42,6 +42,7 @@ class IndexTest extends TestCase
     public function test_login_when_authenticated()
     {
         $user = factory(User::class)->make();
+
         $this->actingAs($user)
             ->get(route('login'))
             ->assertRedirect(route('home'))

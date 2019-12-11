@@ -8,7 +8,6 @@ class AboutController extends Controller
 {
     public function __invoke(PageRepository $page)
     {
-        $texts = $page->texts();
-        return view('about', compact('texts'));
+        return view('about', ['texts' => $page->texts()]);
     }
 }

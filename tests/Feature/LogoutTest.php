@@ -13,10 +13,12 @@ class LogoutTest extends TestCase
     public function test_logout_when_authenticated()
     {
         $user = factory(User::class)->make();
+
         $this->actingAs($user)
             ->post(route('logout'))
             ->assertRedirect(route('home'))
         ;
+
         $this->assertGuest();
     }
 

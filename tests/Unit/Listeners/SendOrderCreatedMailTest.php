@@ -31,7 +31,6 @@ class SendOrderCreatedMailTest extends TestCase
         (new SendOrderCreatedMail())->handle($event);
 
         Mail::assertSent(OrderCreatedMail::class, function ($mail) {
-            #dd($mail->build());
             return $mail->hasTo('test@developer')
                 && $mail->bcc('info@fightzone.se')
             ;

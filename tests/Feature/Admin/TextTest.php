@@ -14,6 +14,7 @@ class TextTest extends TestCase
     protected function setUp(): void
     {
         parent::setUp();
+
         $this->be(factory(User::class)->create());
     }
 

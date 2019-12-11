@@ -14,12 +14,14 @@ class EventTest extends TestCase
     protected function setUp(): void
     {
         parent::setUp();
+
         $this->be(factory(User::class)->create());
     }
 
     public function test_index()
     {
         $event = factory(Event::class)->create();
+
         $this->get(route('admin.event.index'))
             ->assertSeeText(__('app.activity.' . $event->activity->slug))
             ->assertOk()
@@ -37,6 +39,7 @@ class EventTest extends TestCase
     public function test_edit()
     {
         $event = factory(Event::class)->create();
+
         $this->get(route('admin.event.edit', $event))
             ->assertOk()
             ->assertSeeText('Update')
@@ -71,6 +74,7 @@ class EventTest extends TestCase
     public function test_update_sad_path()
     {
         $event = factory(Event::class)->create();
+
         $this->put(route('admin.event.update', $event), [])
             ->assertSessionHasErrors([
                 'dow' => 'Day of week is required',
@@ -93,9 +97,11 @@ class EventTest extends TestCase
     public function test_destroy()
     {
         $event = factory(Event::class)->create();
+
         $this->delete(route('admin.event.destroy', $event))
             ->assertRedirect(route('admin.event.index'))
         ;
+
         $this->assertDatabaseMissing('events', ['id' => $event->id]);
     }
 }

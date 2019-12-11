@@ -8,7 +8,6 @@ class JoinController extends Controller
 {
     public function __invoke(PageRepository $page)
     {
-        $texts = $page->texts();
-        return view('join', compact('texts'));
+        return view('join', ['texts' => $page->texts()]);
     }
 }

@@ -20,7 +20,6 @@ class BillmateTest extends TestCase
     {
         parent::setUp();
 
-        #Mail::fake();
         Event::fake();
 
         $this->billmate = $this->mock(Billmate::class);
@@ -69,7 +68,7 @@ class BillmateTest extends TestCase
         ;
     }
 
-    public function test_callback_sends_mail()
+    public function test_callback_dispatches_event()
     {
         $order = new Order();
 

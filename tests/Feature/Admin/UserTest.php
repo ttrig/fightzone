@@ -15,6 +15,7 @@ class UserTest extends TestCase
     protected function setUp(): void
     {
         parent::setUp();
+
         $this->user = factory(User::class)->create();
         $this->be($this->user);
     }

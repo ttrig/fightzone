@@ -21,11 +21,13 @@ trait SanitizesInput
     protected function sanitize(array $sanitizers): void
     {
         $inputs = $this->all();
+
         foreach ($sanitizers as $input) {
             if ($data = data_get($inputs, $input)) {
                 data_set($inputs, $input, filter_var($data, FILTER_SANITIZE_STRING));
             }
         }
+
         $this->replace($inputs);
     }
 
@@ -34,6 +36,7 @@ trait SanitizesInput
         if (property_exists($this, 'sanitize')) {
             return $this->sanitize;
         }
+
         return []; // @codeCoverageIgnore
     }
 }

@@ -23,7 +23,7 @@ class SetLocale
         }
 
         # set to default if not available
-        if (!in_array($locale, self::AVAILABLE)) {
+        if (! in_array($locale, self::AVAILABLE)) {
             $locale = config('app.locale');
         }
 

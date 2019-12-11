@@ -2,8 +2,8 @@
 
 namespace App\Http\Requests;
 
-use Illuminate\Foundation\Http\FormRequest;
 use App\Traits\SanitizesInput;
+use Illuminate\Foundation\Http\FormRequest;
 
 class CreateUser extends FormRequest
 {

@@ -41,9 +41,9 @@ class DatabaseSeeder extends Seeder
         ];
 
         $this->activities = collect($slugs)
-            ->mapWithKeys(function ($slug) {
-                return [$slug => factory(Activity::class)->create(compact('slug'))];
-            })
+            ->mapWithKeys(fn($slug) => [
+                $slug => factory(Activity::class)->create(compact('slug'))
+            ])
         ;
     }
 

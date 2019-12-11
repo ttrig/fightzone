@@ -50,9 +50,7 @@ class PaymentController extends Controller
             $plans = cache()->remember(
                 $cacheKey,
                 now()->addHours(4),
-                function () use ($billmate, $article) {
-                    return $billmate->getPaymentPlans($article->billmateArticle());
-                }
+                fn() => $billmate->getPaymentPlans($article->billmateArticle())
             );
 
             $cost = ($yearPlan = collect($plans)->firstWhere('nbrofmonths', 12))

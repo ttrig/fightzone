@@ -48,9 +48,7 @@ class AuditTransformer
     public function list(Collection $audits): array
     {
         return $audits
-            ->filter(function (Audit $audit) {
-                return isset(self::TYPES[$audit->auditable_type]);
-            })
+            ->filter(fn(Audit $audit) => isset(self::TYPES[$audit->auditable_type]))
             ->map(function (Audit $audit) {
                 $type = self::TYPES[$audit->auditable_type];
 

@@ -25,10 +25,9 @@ class PageRepository
     {
         $texts = Text::where('route', $this->getRouteName())
             ->get()
-            ->mapWithKeys(function ($text) {
-                return [$text->name => $text->content];
-            })
+            ->mapWithKeys(fn($text) => [$text->name => $text->content])
         ;
+
         return new Fluent($texts);
     }
 

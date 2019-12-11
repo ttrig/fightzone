@@ -11,6 +11,7 @@ class AlertController extends AdminController
     public function index()
     {
         $alerts = Alert::orderBy('from_date', 'desc')->get();
+
         return view('admin.alert.index', compact('alerts'));
     }
 

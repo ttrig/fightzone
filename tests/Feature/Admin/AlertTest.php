@@ -11,14 +11,11 @@ class AlertTest extends TestCase
 {
     use RefreshDatabase;
 
-    private $user;
-
     protected function setUp(): void
     {
         parent::setUp();
 
-        $this->user = factory(User::class)->create();
-        $this->be($this->user);
+        $this->be(factory(User::class)->create());
     }
 
     public function test_index()

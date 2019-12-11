@@ -38,6 +38,7 @@ class Alert extends AuditableModel
     public function scopeActive($query)
     {
         $now = now();
+
         return $query
             ->where('from_date', '<=', $now)
             ->where('to_date', '>', $now)
@@ -48,6 +49,7 @@ class Alert extends AuditableModel
     public function isActive(): bool
     {
         $now = now()->startOfDay();
+
         return $this->from_date->lte($now)
             && $this->to_date->gt($now)
         ;

@@ -97,8 +97,10 @@ class ScheduleTransformer
         ]);
 
         return $items->map(function ($item) use ($events) {
-            $item['classes'] = $events->where('activity.slug', $item['slug'])
+            $item['classes'] = $events
+                ->where('activity.slug', $item['slug'])
                 ->groupBy('dow');
+
             return $item;
         })->toArray();
     }
@@ -106,6 +108,7 @@ class ScheduleTransformer
     private function getTitle(Event $event): string
     {
         $title = "\n";
+
         if ($event instanceof Event) {
             $title .= $event->activity->name . "\n";
         }

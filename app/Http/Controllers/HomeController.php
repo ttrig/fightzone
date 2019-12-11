@@ -28,6 +28,7 @@ class HomeController extends Controller
     public function lang($str)
     {
         session()->put('locale', $str);
+
         return redirect()->back();
     }
 }

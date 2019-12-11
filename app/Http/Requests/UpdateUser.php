@@ -6,7 +6,6 @@ use Illuminate\Validation\Rule;
 
 class UpdateUser extends CreateUser
 {
-
     public function authorize()
     {
         return true;

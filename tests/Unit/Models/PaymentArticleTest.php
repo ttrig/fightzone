@@ -25,6 +25,7 @@ class PaymentArticleTest extends TestCase
     public function test_getFormattedPriceAttribute()
     {
         $article = factory(PaymentArticle::class)->create(['price' => 1000]);
+
         $this->assertEquals('1 000', $article->formatted_price);
 
         app()->setLocale('en');

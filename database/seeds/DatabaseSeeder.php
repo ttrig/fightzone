@@ -40,11 +40,9 @@ class DatabaseSeeder extends Seeder
             'kids_bjj',
         ];
 
-        $this->activities = collect($slugs)
-            ->mapWithKeys(fn($slug) => [
-                $slug => factory(Activity::class)->create(compact('slug'))
-            ])
-        ;
+        $this->activities = collect($slugs)->mapWithKeys(fn($slug) => [
+            $slug => factory(Activity::class)->create(compact('slug'))
+        ]);
     }
 
     private function seedAlerts()
@@ -81,6 +79,7 @@ class DatabaseSeeder extends Seeder
     private function seedTexts()
     {
         factory(Text::class)->state('long')->create(['route' => 'home', 'name' => 'fightzone']);
+
         $this->activities->each(function ($activity, $slug) {
             factory(Text::class)->state('short')->create(['route' => 'home', 'name' => $slug]);
         });

@@ -76,6 +76,7 @@ class HomeTest extends TestCase
     public function test_home_with_alert()
     {
         $alert = factory(Alert::class)->create();
+
         $this->get('/')->assertOk()->assertSeeText($alert->content);
     }
 

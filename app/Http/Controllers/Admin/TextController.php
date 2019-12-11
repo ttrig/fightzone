@@ -10,6 +10,7 @@ class TextController extends AdminController
     public function index()
     {
         $texts = Text::orderBy('route')->orderBy('name')->get();
+
         return view('admin.text.index', compact('texts'));
     }
 

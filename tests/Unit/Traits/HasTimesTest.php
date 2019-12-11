@@ -32,12 +32,14 @@ class HasTimesTest extends TestCase
     public function test_getFromTimeAttribute_only_returns_hour_and_minutes()
     {
         $class = factory(Event::class)->make();
+
         $this->assertEquals(5, strlen($class->from_time));
     }
 
     public function test_getToTimeAttribute_only_returns_hour_and_minutes()
     {
         $class = factory(Event::class)->make();
+
         $this->assertEquals(5, strlen($class->to_time));
     }
 }

@@ -12,6 +12,7 @@ trait HasContent
         if (app()->isLocale('en')) {
             return $this->content_en;
         }
+
         return $this->content_sv;
     }
 }

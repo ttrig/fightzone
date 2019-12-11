@@ -19,11 +19,13 @@ trait PurifiesInput
     protected function purify(array $purifiers): void
     {
         $inputs = $this->all();
+
         foreach ($purifiers as $input) {
             if ($data = data_get($inputs, $input)) {
                 data_set($inputs, $input, \Purifier::clean($data));
             }
         }
+
         $this->replace($inputs);
     }
 
@@ -32,6 +34,7 @@ trait PurifiesInput
         if (property_exists($this, 'purify')) {
             return $this->purify;
         }
+
         return []; // @codeCoverageIgnore
     }
 }

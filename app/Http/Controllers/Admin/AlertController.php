@@ -27,9 +27,7 @@ class AlertController extends AdminController
     protected function form(Alert $alert)
     {
         $routes = collect(Alert::AVAILABLE_ROUTES)
-            ->mapWithKeys(function ($routeName) {
-                return [$routeName => route($routeName, [], false)];
-            });
+            ->mapWithKeys(fn($route) => [$route => route($route, [], false)]);
 
         return view('admin.alert.form', [
             'alert'  => $alert,

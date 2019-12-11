@@ -116,9 +116,9 @@ class BillmateTest extends TestCase
 
     private function makeFormRequestBody(Order $order): array
     {
-        return collect($this->makeRequestBody($order))->map(function ($item) {
-            return json_encode($item);
-        })->all();
+        return collect($this->makeRequestBody($order))
+            ->map(fn($item) => json_encode($item))
+            ->all();
     }
 
     private function makeRequestBody(Order $order): array

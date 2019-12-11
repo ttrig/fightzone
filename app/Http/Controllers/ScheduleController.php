@@ -15,9 +15,9 @@ class ScheduleController extends Controller
     ) {
         $weekSchedule = $scheduleRepo->getWeekSchedule();
 
-        $filterOptions = $weekSchedule->mapWithKeys(function ($event) {
-            return [$event->activity->slug => $event->activity->name];
-        })->sort();
+        $filterOptions = $weekSchedule->mapWithKeys(
+            fn($event) => [$event->activity->slug => $event->activity->name]
+        )->sort();
 
         return view('schedule', [
             'alerts' => $pageRepo->alerts(),

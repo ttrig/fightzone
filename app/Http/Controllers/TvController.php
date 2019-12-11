@@ -11,9 +11,7 @@ class TvController extends Controller
         $activities = $schedule->getWeekSchedule()
             ->groupBy('activity.slug')
             ->sortKeys()
-            ->map(function ($events) {
-                return $events->groupBy('dow');
-            })
+            ->map(fn($events) => $events->groupBy('dow'))
         ;
 
         return view('tv', compact('activities'));

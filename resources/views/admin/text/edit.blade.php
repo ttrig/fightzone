@@ -111,7 +111,7 @@
                 class="open-audit"
                 data-title="{{ $audit->created_at }}"
               >{{ $audit->created_at }}</a>
-              by {{ $audit->user->name }}
+              by {{ $audit->user->name ?? 'unknown' }}
             </div>
           @empty
             <p>This text has no history.</p>

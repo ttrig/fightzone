@@ -84,10 +84,28 @@ $lang_link = app()->isLocale('sv') ? 'en' : 'sv';
               </a>
             </div>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{ route('about') }}">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle"
+              href="#"
+              id="about-dropdown"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
               @lang('app.nav.about')
             </a>
+            <div class="dropdown-menu" aria-labelledby="about-dropdown">
+              <a class="dropdown-item" href="{{ route('history') }}">
+                @lang('app.nav.history')
+              </a>
+              <a class="dropdown-item" href="{{ route('facility') }}">
+                @lang('app.nav.facility')
+              </a>
+              <a class="dropdown-item" href="{{ route('partners') }}">
+                @lang('app.nav.partners')
+              </a>
+            </div>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{ route('contact') }}">

@@ -7,6 +7,7 @@ mix.js('resources/js/admin-text-edit.js', 'public/js')
 
 mix.sass('resources/sass/app.scss', 'public/css')
 mix.sass('resources/sass/schedule.scss', 'public/css')
+mix.sass('resources/sass/partners.scss', 'public/css')
 mix.sass('resources/sass/admin-tinymce.scss', 'public/css')
 mix.sass('resources/sass/admin.scss', 'public/css')
 

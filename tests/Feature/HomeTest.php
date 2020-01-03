@@ -28,6 +28,9 @@ class HomeTest extends TestCase
                 __('app.nav.join'),
                 __('app.nav.training'),
                 __('app.nav.about'),
+                __('app.nav.history'),
+                __('app.nav.facility'),
+                __('app.nav.partners'),
                 __('app.nav.contact'),
             ])
             ->assertSeeTextInOrder([

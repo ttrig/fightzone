@@ -81,7 +81,7 @@ $(function() {
       </h2>
       {!! $texts->fightzone !!}
       <p class="text-center">
-        <a href="{{ route('about') }}" class="btn btn-dark mt-2" role="button">
+        <a href="{{ route('history') }}" class="btn btn-dark mt-2" role="button">
           @lang('app.home.more_about_fightzone')
         </a>
         <a

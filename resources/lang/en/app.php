@@ -15,6 +15,9 @@ return [
         'join'     => 'Join',
         'training' => 'Training',
         'about'    => 'About',
+        'history'  => 'Our history',
+        'facility' => 'The facility',
+        'partners' => 'Partners and Friends',
         'contact'  => 'Contact',
         'lang'     => 'Svenska',
     ],
@@ -125,10 +128,19 @@ return [
         'more' => 'More about boxing',
     ],
 
-    # page: about
-    'about' => [
-        'title' => 'About Fightzone',
-        'facility' => 'Facility',
+    # page: history
+    'history' => [
+        'title' => 'Our history',
+    ],
+
+    # page: facility
+    'facility' => [
+        'title' => 'The facility',
+    ],
+
+    # page: partners
+    'partners' => [
+        'title' => 'Partners and Friends',
     ],
 
     # page: contact

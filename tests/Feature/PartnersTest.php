@@ -4,13 +4,13 @@ namespace Tests\Feature;
 
 use Tests\TestCase;
 
-class ContactTest extends TestCase
+class PartnersTest extends TestCase
 {
     public function test_index()
     {
-        $this->get(route('contact'))
+        $this->get(route('partners'))
             ->assertOk()
-            ->assertSeeText(__('app.contact.title'))
+            ->assertSeeText(__('app.partners.title'))
         ;
     }
 }

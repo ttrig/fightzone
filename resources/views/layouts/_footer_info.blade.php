@@ -36,9 +36,11 @@
         </p>
       </div>
       <div class="col-md-4">
-        <img class="img-fluid mx-auto lazy"
-          data-src="/images/footer/checkmat.png"
-          alt="Checkmat">
+        <a target="_blank" href="https://www.checkmatbjj.com/">
+          <img class="img-fluid mx-auto lazy"
+            data-src="/images/footer/checkmat.png"
+            alt="Checkmat">
+        </a>
       </div>
     </div>
   </div>

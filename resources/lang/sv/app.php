@@ -15,6 +15,9 @@ return [
         'join'     => 'Börja träna',
         'training' => 'Träning',
         'about'    => 'Om Fightzone',
+        'history'  => 'Historia',
+        'facility' => 'Lokalen',
+        'partners' => 'Partners och vänner',
         'contact'  => 'Kontakt',
         'lang'     => 'English',
     ],
@@ -125,10 +128,19 @@ return [
         'more' => 'Läs mer om boxning',
     ],
 
-    # page: about
-    'about' => [
-        'title' => 'Om Fightzone',
-        'facility' => 'Lokalen',
+    # page: history
+    'history' => [
+        'title' => 'Historia',
+    ],
+
+    # page: facility
+    'facility' => [
+        'title' => 'Lokalen',
+    ],
+
+    # page: partners
+    'partners' => [
+        'title' => 'Partners och vänner',
     ],
 
     # page: contact

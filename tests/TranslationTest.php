@@ -2,7 +2,7 @@
 
 namespace Tests\Unit\Models;
 
-use File;
+use Illuminate\Support\Facades\File;
 use Tests\TestCase;
 
 class TranslationTest extends TestCase
@@ -19,9 +19,9 @@ class TranslationTest extends TestCase
     private function diff(array $array1, array $array2, string $parent): void
     {
         foreach ($array1 as $key => $value) {
-            $item = $parent . '.' . $key;
+            $item = "{$parent}.{$key}";
 
-            if (!isset($array2[$key])) {
+            if (! isset($array2[$key])) {
                 $this->fail($item . ' does not exist');
             }
 

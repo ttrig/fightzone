@@ -140,7 +140,8 @@ return [
 
     # page: partners
     'partners' => [
-        'title' => 'Partners och vänner',
+        'partners' => 'Partners',
+        'friends' => 'Vänner',
     ],
 
     # page: contact

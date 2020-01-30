@@ -1,22 +1,46 @@
-@extends('layouts.base', ['pageTitle' => __('app.partners.title')])
+@extends('layouts.base', ['pageTitle' => __('app.nav.partners')])
 @section('content')
 <div class="container mt-3">
 
   <h2>
-    <i class="fa fa-users"></i>
-    @lang('app.partners.title')
+    <i class="fa fa-handshake"></i>
+    @lang('app.partners.partners')
   </h2>
 
   <div class="row my-3 text-center">
-    <div class="col-md-2 offset-md-1 partner">
-      <a target="_blank" href="https://träningsmat.se/">
-        <img class="img-fluid rounded" data-src="/images/partners/traningsmatse.png">
-      </a>
-      <br>
-      <a class="text-secondary" target="_blank" href="https://träningsmat.se/">
-        Träningsmat
-      </a>
+    <div class="col-md-2 partner d-flex flex-column justify-content-end">
+      <div>
+        <a target="_blank" href="https://träningsmat.se/">
+          <img class="img-fluid rounded" data-src="/images/partners/traningsmatse.png">
+        </a>
+      </div>
+      <div>
+        <a class="text-secondary" target="_blank" href="https://träningsmat.se/">
+          Träningsmat
+        </a>
+      </div>
     </div>
+
+    <div class="col-md-2 partner d-flex flex-column justify-content-end">
+      <div>
+        <a target="_blank" href="https://www.medborgarskolan.se/">
+          <img class="img-fluid rounded" data-src="/images/partners/medborgarskolan.jpg">
+        </a>
+      </div>
+      <div>
+        <a class="text-secondary" target="_blank" href="https://www.medborgarskolan.se/">
+          Medborgarskolan
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <h2>
+    <i class="fa fa-users"></i>
+    @lang('app.partners.friends')
+  </h2>
+
+  <div class="row my-3 text-center">
 
     <div class="col-md-2 partner">
       <a target="_blank" href="https://checkmateurope.com/">

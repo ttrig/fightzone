@@ -10,7 +10,8 @@ class PartnersTest extends TestCase
     {
         $this->get(route('partners'))
             ->assertOk()
-            ->assertSeeText(__('app.partners.title'))
+            ->assertSeeText(__('app.partners.partners'))
+            ->assertSeeText(__('app.partners.friends'))
         ;
     }
 }

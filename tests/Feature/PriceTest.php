@@ -28,7 +28,7 @@ class PriceTest extends TestCase
                 __('app.prices.title'),
                 $infoText->content,
             ])
-            ->assertSee($tablesText->content)
+            ->assertSee($tablesText->content, $escaped = false)
         ;
     }
 }

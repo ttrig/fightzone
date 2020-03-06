@@ -93,8 +93,8 @@ class PaymentTest extends TestCase
             ->assertSeeText($this->article->name)
             ->assertSeeText($this->article->content)
             ->assertSeeText($this->article->formatted_price)
-            ->assertSee('<iframe')
-            ->assertSee('https://checkout.billmate.se/123/456/test')
+            ->assertSee('<iframe', $escaped = false)
+            ->assertSee('https://checkout.billmate.se/123/456/test', $escaped = false)
         ;
     }
 

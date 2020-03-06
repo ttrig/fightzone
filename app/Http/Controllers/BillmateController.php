@@ -7,7 +7,7 @@ use Ttrig\Billmate\Order;
 
 class BillmateController extends Controller
 {
-    public function accept(Request $request)
+    public function accept()
     {
         return view('payment.success');
     }

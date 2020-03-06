@@ -53,7 +53,7 @@ class HomeTest extends TestCase
                 __('app.home.schedule.title'),
                 __('app.home.schedule.no_training'),
                 __('app.home.schedule.link'),
-            ])
+            ], $escaped = false)
             ->assertSeeTextInOrder([
                 'Kopparbergsgatan 2B, 214 44',
                 'info@fightzone.se',

@@ -65,7 +65,7 @@
                   {{ $alert->to_date->toDateString() }}
                 </td>
                 <td>
-                  {{ str_limit(strip_tags($alert->content_en), 50) }}
+                  {{ Str::limit(strip_tags($alert->content_en), 50) }}
                 </td>
                 <td align="right" style="white-space:nowrap;">
                   <a href="{{ route('admin.alert.edit', $alert) }}"

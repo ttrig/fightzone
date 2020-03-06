@@ -36,7 +36,7 @@
                   </span>
                 </td>
                 <td>
-                  {{ str_limit(strip_tags($text->content_en), 60) }}
+                  {{ Str::limit(strip_tags($text->content_en), 60) }}
                 </td>
                 <td align="right">
                   <a href="{{ route('admin.text.edit', $text) }}"

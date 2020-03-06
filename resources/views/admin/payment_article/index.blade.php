@@ -55,7 +55,7 @@
                   {{ $article->price }}
                 </td>
                 <td>
-                  {{ str_limit(strip_tags($article->content), 50) }}
+                  {{ Str::limit(strip_tags($article->content), 50) }}
                 </td>
                 <td align="right" style="white-space:nowrap;">
                   <a href="{{ route('admin.payment_article.edit', $article) }}"

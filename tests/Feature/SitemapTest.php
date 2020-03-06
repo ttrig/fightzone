@@ -28,7 +28,7 @@ class SitemapTest extends TestCase
             ->assertSeeInOrder([
                 '<loc>' . route('home') . '</loc>',
                 '<lastmod>2002-01-01</lastmod>',
-            ])
+            ], $escaped = false)
         ;
     }
 }

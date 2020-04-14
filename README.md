@@ -1,7 +1,7 @@
 <p align="center"><img src="https://fightzone.se/images/footer/fightzone.png"></p>
 
 <p align="center">
-<a href="https://travis-ci.org/ttrig/fightzone/branches"><img src="https://travis-ci.org/ttrig/fightzone.svg?branch=master" alt="Build Status"></a>
+<a href="https://github.com/ttrig/fightzone/actions"><img src="https://github.com/ttrig/fightzone/workflows/build/badge.svg" alt="Build Status"></a>
 <a href="https://codecov.io/gh/ttrig/fightzone"><img src="https://img.shields.io/codecov/c/github/ttrig/fightzone/master.svg" alt="Codecov"></a>
 <a href="https://fightzone.se"><img src="https://img.shields.io/website/https/fightzone.se.svg" alt="Website"></a>
 <a href="https://github.com/ttrig/fightzone/blob/master/LICENSE.md"><img src="https://img.shields.io/github/license/ttrig/fightzone.svg" alt="License"></a>

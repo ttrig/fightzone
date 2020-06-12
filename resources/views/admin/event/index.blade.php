@@ -46,7 +46,7 @@
     </thead>
     <tbody>
       @foreach ($activity->events as $event)
-      <tr data-id="{{ $event->id }}">
+      <tr data-id="{{ $event->id }}" class="{{ $event->is_enabled ? '' : 'text-muted-light' }}">
         <td>
           {{ __('app.schedule.day.' . $event->dow) }}
         </td>
@@ -66,13 +66,31 @@
           {{ $event->content_sv }}
         </td>
         <td align="right" style="white-space:nowrap;">
+          @if ($event->is_enabled)
+            <button class="btn btn-sm btn-warning disable-button"
+              type="button"
+              title="Disable event to hide it from the public schedule."
+              data-url="{{ route('admin.event.disable', $event) }}"
+            >
+              <i class="fa fa-toggle-off"></i>
+            </button>
+          @else
+            <button class="btn btn-sm btn-success enable-button"
+              type="button"
+              title="Enable event to show it on the public schedule."
+              data-url="{{ route('admin.event.enable', $event) }}"
+            >
+              <i class="fa fa-toggle-on"></i>
+            </button>
+          @endif
           <a class="btn btn-sm btn-primary" href="{{ route('admin.event.edit', $event) }}">
             <i class="fa fa-pen"></i>
           </a>
           <button class="btn btn-sm btn-danger delete-button"
             type="button"
             title="Delete"
-            data-url="{{ route('admin.event.destroy', $event) }}">
+            data-url="{{ route('admin.event.destroy', $event) }}"
+          >
             <i class="fa fa-trash-alt"></i>
           </button>
         </td>
@@ -82,6 +100,11 @@
   </table>
   @endforeach
 </div>
+
+<form id="put-form" role="form" method="POST" action="#">
+  {{ method_field('PUT') }}
+  {!! csrf_field() !!}
+</form>
 
 <form id="delete-form" role="form" method="POST" action="#">
   {{ method_field('DELETE') }}
@@ -93,13 +116,22 @@
 @push('scripts')
 <script>
 $(function() {
-  $('.delete-button').click(function() {
-    if (!confirm('Are you sure?')) {
-      return
+  $('.disable-button').click(function() {
+    if (confirm('Do you want to disable this event?')) {
+      $('form#put-form').prop('action', $( this ).data('url')).submit()
     }
-    $('form#delete-form')
-      .prop('action', $( this ).data('url'))
-      .submit()
+  })
+
+  $('.enable-button').click(function() {
+    if (confirm('Do you want to enable this event?')) {
+      $('form#put-form').prop('action', $( this ).data('url')).submit()
+    }
+  })
+
+  $('.delete-button').click(function() {
+    if (confirm('Are you sure?')) {
+      $('form#delete-form').prop('action', $( this ).data('url')).submit()
+    }
   })
 })
 </script>

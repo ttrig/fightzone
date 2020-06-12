@@ -72,6 +72,20 @@
                   >
                 </div>
                 <div class="form-check">
+                  <input type="hidden" name="is_enabled" value="0">
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    name="is_enabled"
+                    id="i-isEnabled"
+                    {{ data_get($event, 'is_enabled') ? 'checked="checked"' : ''}}
+                    value="1"
+                  >
+                  <label class="form-check-label" for="i-isEnabled">
+                    Enabled?
+                  </label>
+                </div>
+                <div class="form-check">
                   <input type="hidden" name="is_open_mat" value="0">
                   <input
                     type="checkbox"

@@ -35,6 +35,7 @@ class CreateEvent extends FormRequest
             'dow' => 'required|between:1,7',
             'from_time' => 'required|date_format:H:i',
             'to_time' => 'required|date_format:H:i',
+            'is_enabled' => 'boolean',
             'is_open_mat' => 'boolean',
             'content_en' => 'required_if:is_open_mat,0|max:64',
             'content_sv' => 'required_if:is_open_mat,0|max:64',

@@ -54,6 +54,28 @@ class EventController extends AdminController
         ;
     }
 
+    public function disable(Event $event)
+    {
+        $event->update(['is_enabled' => false]);
+
+        return redirect()
+            ->route('admin.event.index')
+            ->with('success', 'Scheduled event disabled!')
+            ->with('updated', $event->id)
+        ;
+    }
+
+    public function enable(Event $event)
+    {
+        $event->update(['is_enabled' => true]);
+
+        return redirect()
+            ->route('admin.event.index')
+            ->with('success', 'Scheduled event enabled!')
+            ->with('updated', $event->id)
+        ;
+    }
+
     public function destroy(Event $event)
     {
         $event->delete();

@@ -9,6 +9,7 @@ $factory->define(Event::class, fn(Faker $faker) => [
     'dow' => now()->dayOfWeekIso,
     'from_time' => now()->format('H:i'),
     'to_time' => now()->addHour()->format('H:i'),
+    'is_enabled' => true,
     'is_open_mat' => false,
     'content_sv' => $faker->sentence(2),
     'content_en' => $faker->sentence(2),
@@ -29,4 +30,8 @@ $factory->state(Event::class, 'random', function (Faker $faker) {
 
 $factory->state(Event::class, 'open-mat', [
     'is_open_mat' => true,
+]);
+
+$factory->state(Event::class, 'disabled', [
+    'is_enabled' => false,
 ]);

@@ -9,7 +9,8 @@ class ScheduleRepository
 {
     public function getTodaysSchedule(): Collection
     {
-        return Event::with('activity')
+        return Event::enabled()
+            ->with('activity')
             ->where('dow', now()->dayOfWeekIso)
             ->orderBy('from_time')
             ->orderBy('to_time')
@@ -19,7 +20,8 @@ class ScheduleRepository
 
     public function getWeekSchedule(): Collection
     {
-        return Event::with('activity')
+        return Event::enabled()
+            ->with('activity')
             ->orderBy('dow')
             ->orderBy('from_time')
             ->orderBy('to_time')

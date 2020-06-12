@@ -9,7 +9,7 @@
 
   <div class="row my-3 text-center">
     <div class="col-md-2 partner d-flex flex-column justify-content-end">
-      <div>
+      <div class="d-flex flex-column flex-grow-1 justify-content-center">
         <a target="_blank" href="https://träningsmat.se/">
           <img class="img-fluid rounded" data-src="/images/partners/traningsmatse.png">
         </a>
@@ -22,7 +22,7 @@
     </div>
 
     <div class="col-md-2 partner d-flex flex-column justify-content-end">
-      <div>
+      <div class="d-flex flex-column flex-grow-1 justify-content-center">
         <a target="_blank" href="https://www.medborgarskolan.se/">
           <img class="img-fluid rounded" data-src="/images/partners/medborgarskolan.jpg">
         </a>
@@ -30,6 +30,19 @@
       <div>
         <a class="text-secondary" target="_blank" href="https://www.medborgarskolan.se/">
           Medborgarskolan
+        </a>
+      </div>
+    </div>
+
+    <div class="col-md-2 partner d-flex flex-column justify-content-end">
+      <div class="d-flex flex-column flex-grow-1 justify-content-center">
+        <a target="_blank" href="https://www.baltzartandvard.se/">
+          <img class="img-fluid rounded" data-src="/images/partners/baltzartandvard.png">
+        </a>
+      </div>
+      <div>
+        <a class="text-secondary" target="_blank" href="https://www.baltzartandvard.se/">
+          Baltzar Tandvård
         </a>
       </div>
     </div>

@@ -30,6 +30,18 @@ class ScheduleTest extends TestCase
         ;
     }
 
+    public function test_index_dont_show_disabled_events()
+    {
+        $event1 = factory(Event::class)->create();
+        $event2 = factory(Event::class)->state('disabled')->create();
+
+        $this->get(route('schedule'))
+            ->assertOk()
+            ->assertSeeText($event1->content)
+            ->assertDontSeeText($event2->content)
+        ;
+    }
+
     public function test_index_with_info_text()
     {
         $infoText = factory(Text::class)->create([

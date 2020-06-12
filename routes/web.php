@@ -59,6 +59,8 @@ Route::group([
     Route::resource('user', 'UserController')->except('show');
     Route::resource('alert', 'AlertController')->except('show');
     Route::resource('text', 'TextController')->only(['index', 'edit', 'update']);
+    Route::put('event/{event}/disable', 'EventController@disable')->name('event.disable');
+    Route::put('event/{event}/enable', 'EventController@enable')->name('event.enable');
     Route::resource('event', 'EventController')->except('show');
     Route::resource('payment_article', 'PaymentArticleController')->except('show');
 });

@@ -14,12 +14,18 @@ class Event extends AuditableModel
 
     protected $guarded = [];
 
-    protected $cast = [
+    protected $casts = [
+        'is_enabled' => 'bool',
         'is_open_mat' => 'bool',
     ];
 
     public function activity()
     {
         return $this->belongsTo(Activity::class);
+    }
+
+    public function scopeEnabled($query)
+    {
+        $query->where('is_enabled', true);
     }
 }

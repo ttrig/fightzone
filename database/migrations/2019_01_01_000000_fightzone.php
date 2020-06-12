@@ -31,6 +31,7 @@ class Fightzone extends Migration
             $table->unsignedTinyInteger('dow');
             $table->time('from_time');
             $table->time('to_time');
+            $table->boolean('is_enabled')->default(1);
             $table->boolean('is_open_mat')->default(0);
             $table->string('content_sv', 64)->nullable();
             $table->string('content_en', 64)->nullable();

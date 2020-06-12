@@ -94,6 +94,28 @@ class EventTest extends TestCase
         ;
     }
 
+    public function test_disable()
+    {
+        $event = factory(Event::class)->create();
+
+        $this->put(route('admin.event.disable', $event))
+            ->assertRedirect(route('admin.event.index'))
+        ;
+
+        $this->assertFalse($event->refresh()->is_enabled);
+    }
+
+    public function test_enable()
+    {
+        $event = factory(Event::class)->state('disabled')->create();
+
+        $this->put(route('admin.event.enable', $event))
+            ->assertRedirect(route('admin.event.index'))
+        ;
+
+        $this->assertTrue($event->refresh()->is_enabled);
+    }
+
     public function test_destroy()
     {
         $event = factory(Event::class)->create();

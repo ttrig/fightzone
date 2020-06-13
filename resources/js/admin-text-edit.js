@@ -15,6 +15,7 @@ tinymce.init({
   skin_url: '/tinymce/skins/ui/oxide/',
   content_css: $('#tinymce-content-css').val(),
   theme_url: '/tinymce/themes/silver/theme.min.js',
+  icons_url: '/tinymce/icons/default/icons.min.js',
 
   plugins: ['autoresize', 'code', 'fullscreen', 'link', 'lists', 'table'],
   toolbar: 'undo redo | styleselect bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | table | code fullscreen | removeformat',

@@ -13,6 +13,7 @@ mix.sass('resources/sass/admin.scss', 'public/css')
 
 mix.copy('node_modules/tinymce/skins', 'public/tinymce/skins')
 mix.copy('node_modules/tinymce/themes', 'public/tinymce/themes')
+mix.copy('node_modules/tinymce/icons', 'public/tinymce/icons')
 
 mix.autoload({
   jquery: ['$', 'jQuery', 'window.jQuery'],

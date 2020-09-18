@@ -15,7 +15,7 @@ class AlertTest extends TestCase
     {
         parent::setUp();
 
-        $this->be(factory(User::class)->create());
+        $this->be(User::factory()->create());
     }
 
     public function test_index()
@@ -33,7 +33,7 @@ class AlertTest extends TestCase
 
     public function test_edit()
     {
-        $alert = factory(Alert::class)->create();
+        $alert = Alert::factory()->create();
 
         $this->get(route('admin.alert.edit', $alert))
             ->assertOk()
@@ -60,7 +60,7 @@ class AlertTest extends TestCase
 
     public function test_store_happy_path()
     {
-        $data = factory(Alert::class)->make()->toArray();
+        $data = Alert::factory()->make()->toArray();
         $data['from_date'] = now()->toDateString();
         $data['to_date'] = now()->addHour()->toDateString();
         $data['routes'] = [Alert::AVAILABLE_ROUTES[0]];
@@ -81,7 +81,7 @@ class AlertTest extends TestCase
 
     public function test_update_sad_path()
     {
-        $alert = factory(Alert::class)->create();
+        $alert = Alert::factory()->create();
 
         $this->put(route('admin.alert.update', $alert), [])
             ->assertSessionHasErrors([
@@ -97,7 +97,7 @@ class AlertTest extends TestCase
 
     public function test_update_happy_path()
     {
-        $alert = factory(Alert::class)->create([
+        $alert = Alert::factory()->create([
             'routes' => [Alert::AVAILABLE_ROUTES[0]]
         ]);
 
@@ -122,7 +122,7 @@ class AlertTest extends TestCase
 
     public function test_destroy()
     {
-        $alert = factory(Alert::class)->create();
+        $alert = Alert::factory()->create();
 
         $this->delete(route('admin.alert.destroy', $alert))
             ->assertRedirect(route('admin.alert.index'))

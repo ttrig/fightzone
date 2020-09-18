@@ -12,7 +12,7 @@ class LogoutTest extends TestCase
 
     public function test_logout_when_authenticated()
     {
-        $user = factory(User::class)->make();
+        $user = User::factory()->make();
 
         $this->actingAs($user)
             ->post(route('logout'))

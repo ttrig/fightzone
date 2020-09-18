@@ -1,37 +1,55 @@
 <?php
 
+namespace Database\Factories;
+
 use App\Models\Activity;
 use App\Models\Event;
-use Faker\Generator as Faker;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
-$factory->define(Event::class, fn(Faker $faker) => [
-    'activity_id' => fn() => factory(Activity::class)->create()->id,
-    'dow' => now()->dayOfWeekIso,
-    'from_time' => now()->format('H:i'),
-    'to_time' => now()->addHour()->format('H:i'),
-    'is_enabled' => true,
-    'is_open_mat' => false,
-    'content_sv' => $faker->sentence(2),
-    'content_en' => $faker->sentence(2),
-]);
+class EventFactory extends Factory
+{
+    protected $model = Event::class;
 
-$factory->state(Event::class, 'random', function (Faker $faker) {
-    $from_hour = $faker->numberBetween(10, 19);
-    return [
-        'activity_id' => 1,
-        'dow' => $faker->numberBetween(1, 7),
-        'from_time' => $from_hour . ':00',
-        'to_time' => $from_hour + 1 . ':30',
-        'is_open_mat' => !rand(0, 7),
-        'content_sv' => $faker->sentence(2),
-        'content_en' => $faker->sentence(2),
-    ];
-});
+    public function definition()
+    {
+        return [
+            'activity_id' => fn() => Activity::factory(),
+            'dow' => now()->dayOfWeekIso,
+            'from_time' => now()->format('H:i'),
+            'to_time' => now()->addHour()->format('H:i'),
+            'is_enabled' => true,
+            'is_open_mat' => false,
+            'content_sv' => $this->faker->sentence(2),
+            'content_en' => $this->faker->sentence(2),
+        ];
+    }
 
-$factory->state(Event::class, 'open-mat', [
-    'is_open_mat' => true,
-]);
+    public function random()
+    {
+        $fromHour = $this->faker->numberBetween(10, 19);
 
-$factory->state(Event::class, 'disabled', [
-    'is_enabled' => false,
-]);
+        return $this->state([
+            'activity_id' => 1,
+            'dow' => $this->faker->numberBetween(1, 7),
+            'from_time' => $fromHour . ':00',
+            'to_time' => $fromHour + 1 . ':30',
+            'is_open_mat' => !rand(0, 7),
+            'content_sv' => $this->faker->sentence(2),
+            'content_en' => $this->faker->sentence(2),
+        ]);
+    }
+
+    public function openMat()
+    {
+        return $this->state([
+            'is_open_mat' => true,
+        ]);
+    }
+
+    public function disabled()
+    {
+        return $this->state([
+            'is_enabled' => false,
+        ]);
+    }
+}

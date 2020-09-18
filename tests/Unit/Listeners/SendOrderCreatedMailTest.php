@@ -4,7 +4,7 @@ namespace Tests\Unit\Listeners;
 
 use App\Listeners\SendOrderCreatedMail;
 use App\Mail\OrderCreated as OrderCreatedMail;
-use Mail;
+use Illuminate\Support\Facades\Mail;
 use Tests\TestCase;
 use Ttrig\Billmate\Events\OrderCreated as OrderCreatedEvent;
 use Ttrig\Billmate\Order;

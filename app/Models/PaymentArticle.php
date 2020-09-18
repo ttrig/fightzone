@@ -3,12 +3,14 @@
 namespace App\Models;
 
 use App\Traits\HasContent;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Ttrig\Billmate\Article as BillmateArticle;
 
 class PaymentArticle extends AuditableModel
 {
     use HasContent;
+    use HasFactory;
     use SoftDeletes;
 
     protected $guarded = [];

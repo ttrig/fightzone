@@ -15,9 +15,9 @@ class AuditTransformerTest extends TestCase
 
     public function test_list()
     {
-        $alert = factory(Alert::class)->create();
-        $text = factory(Text::class)->create();
-        $user = factory(User::class)->create();
+        $alert = Alert::factory()->create();
+        $text = Text::factory()->create();
+        $user = User::factory()->create();
 
         $alert->audits()->create([
             'event' => 'created',

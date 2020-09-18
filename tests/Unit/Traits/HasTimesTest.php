@@ -15,12 +15,12 @@ class HasTimesTest extends TestCase
     {
         Carbon::setTestNow('2019-01-01 11:00:00');
 
-        $class1 = factory(Event::class)->make([
+        $class1 = Event::factory()->make([
             'from_time' => '10:00',
             'to_time'   => '11:00',
         ]);
 
-        $class2 = factory(Event::class)->make([
+        $class2 = Event::factory()->make([
             'from_time' => '12:00',
             'to_time'   => '13:00',
         ]);
@@ -31,14 +31,14 @@ class HasTimesTest extends TestCase
 
     public function test_getFromTimeAttribute_only_returns_hour_and_minutes()
     {
-        $class = factory(Event::class)->make();
+        $class = Event::factory()->make();
 
         $this->assertEquals(5, strlen($class->from_time));
     }
 
     public function test_getToTimeAttribute_only_returns_hour_and_minutes()
     {
-        $class = factory(Event::class)->make();
+        $class = Event::factory()->make();
 
         $this->assertEquals(5, strlen($class->to_time));
     }

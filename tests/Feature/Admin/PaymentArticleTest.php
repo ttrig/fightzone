@@ -15,12 +15,12 @@ class PaymentArticleTest extends TestCase
     {
         parent::setUp();
 
-        $this->be(factory(User::class)->create());
+        $this->be(User::factory()->create());
     }
 
     public function test_index()
     {
-        $article = factory(PaymentArticle::class)->create();
+        $article = PaymentArticle::factory()->create();
 
         $this->get(route('admin.payment_article.index'))
             ->assertOk()
@@ -40,7 +40,7 @@ class PaymentArticleTest extends TestCase
 
     public function test_edit()
     {
-        $article = factory(PaymentArticle::class)->create();
+        $article = PaymentArticle::factory()->create();
 
         $this->get(route('admin.payment_article.edit', $article->id))
             ->assertOk()
@@ -69,7 +69,7 @@ class PaymentArticleTest extends TestCase
 
     public function test_store_happy_path()
     {
-        $data = factory(PaymentArticle::class)->make()->toArray();
+        $data = PaymentArticle::factory()->make()->toArray();
 
         $this->post(route('admin.payment_article.store', $data))
             ->assertSessionHasNoErrors()
@@ -81,7 +81,7 @@ class PaymentArticleTest extends TestCase
 
     public function test_update_happy_path()
     {
-        $article = factory(PaymentArticle::class)->create();
+        $article = PaymentArticle::factory()->create();
 
         $data = $article->toArray();
         $data['active'] = false;
@@ -98,7 +98,7 @@ class PaymentArticleTest extends TestCase
 
     public function test_update_sad_path()
     {
-        $article = factory(PaymentArticle::class)->create();
+        $article = PaymentArticle::factory()->create();
 
         $this->put(route('admin.payment_article.update', $article->id), [])
             ->assertSessionHasErrors([
@@ -115,7 +115,7 @@ class PaymentArticleTest extends TestCase
 
     public function test_update_trashed_article()
     {
-        $article = factory(PaymentArticle::class)->create();
+        $article = PaymentArticle::factory()->create();
 
         $article->delete();
 
@@ -126,7 +126,7 @@ class PaymentArticleTest extends TestCase
 
     public function test_destroy()
     {
-        $article = factory(PaymentArticle::class)->create();
+        $article = PaymentArticle::factory()->create();
 
         $this->delete(route('admin.payment_article.destroy', $article->id))
             ->assertRedirect(route('admin.payment_article.index'))

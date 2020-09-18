@@ -3,7 +3,7 @@
 namespace Tests\Unit\Models;
 
 use App\Models\User;
-use Hash;
+use Illuminate\Support\Facades\Hash;
 use Tests\TestCase;
 
 class UserTest extends TestCase
@@ -12,7 +12,7 @@ class UserTest extends TestCase
     {
         $cleartext = 'secret';
 
-        $user = factory(User::class)->make([
+        $user = User::factory()->make([
             'password' => $cleartext,
         ]);
 

@@ -26,13 +26,13 @@ jobs:
         with:
           php-version: 7.4
           extensions: dom, curl, libxml, mbstring, zip, pdo, sqlite, pdo_sqlite
-          coverage: none
+          coverage: pcov
 
       - name: Create database
         run: touch database/database.sqlite
 
       - name: Install Composer dependencies
-        run: composer install --prefer-dist --no-interaction --no-suggest --no-ansi --no-progress
+        run: composer install --prefer-dist --no-interaction --no-ansi --no-progress
 
       - name: Install NPM dependencies
         run: npm install --no-audit --no-optional
@@ -43,7 +43,7 @@ jobs:
       - name: Execute tests
         run: |
           vendor/bin/phpcs
-          vendor/bin/phpunit
+          vendor/bin/phpunit --coverage-clover=coverage.xml
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v1

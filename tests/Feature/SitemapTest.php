@@ -12,12 +12,12 @@ class SitemapTest extends TestCase
 
     public function test_index()
     {
-        factory(Text::class)->create([
+        Text::factory()->create([
             'route' => 'home',
             'updated_at' => '2001-01-01 00:00:00',
         ]);
 
-        factory(Text::class)->create([
+        Text::factory()->create([
             'route' => 'home',
             'updated_at' => '2002-01-01 00:00:00',
         ]);

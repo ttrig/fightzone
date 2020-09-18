@@ -17,8 +17,8 @@ class ScheduleTransformerTest extends TestCase
     {
         Carbon::setTestNow('2019-01-01 12:00:00');
 
-        $event1 = factory(Event::class)->create();
-        $event2 = factory(Event::class)->state('open-mat')->create();
+        $event1 = Event::factory()->create();
+        $event2 = Event::factory()->openMat()->create();
 
         $events = collect([$event1, $event2]);
         $result = (new ScheduleTransformer())->fullcalendarEvents($events);
@@ -47,8 +47,8 @@ class ScheduleTransformerTest extends TestCase
 
     public function test_listItems()
     {
-        $activity = factory(Activity::class)->create(['slug' => 'bjj']);
-        $event = $activity->events()->save(factory(Event::class)->make());
+        $activity = Activity::factory()->create(['slug' => 'bjj']);
+        $event = $activity->events()->save(Event::factory()->make());
 
         $items = (new ScheduleTransformer())->listItems(collect([$event]));
         $item = collect($items)->firstWhere('slug', $activity->slug);

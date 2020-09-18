@@ -14,8 +14,8 @@ class ScheduleTest extends TestCase
 
     public function test_index()
     {
-        $event1 = factory(Event::class)->create();
-        $event2 = factory(Event::class)->state('open-mat')->create();
+        $event1 = Event::factory()->create();
+        $event2 = Event::factory()->openMat()->create();
 
         $this->get(route('schedule'))
             ->assertOk()
@@ -32,8 +32,8 @@ class ScheduleTest extends TestCase
 
     public function test_index_dont_show_disabled_events()
     {
-        $event1 = factory(Event::class)->create();
-        $event2 = factory(Event::class)->state('disabled')->create();
+        $event1 = Event::factory()->create();
+        $event2 = Event::factory()->disabled()->create();
 
         $this->get(route('schedule'))
             ->assertOk()
@@ -44,7 +44,7 @@ class ScheduleTest extends TestCase
 
     public function test_index_with_info_text()
     {
-        $infoText = factory(Text::class)->create([
+        $infoText = Text::factory()->create([
             'route' => 'schedule',
             'name' => 'info',
         ]);
@@ -57,7 +57,7 @@ class ScheduleTest extends TestCase
 
     public function test_index_with_alert()
     {
-        $alert = factory(Alert::class)->create();
+        $alert = Alert::factory()->create();
 
         $this->get(route('schedule'))
             ->assertOk()

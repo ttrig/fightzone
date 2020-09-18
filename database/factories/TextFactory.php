@@ -1,43 +1,68 @@
 <?php
 
+namespace Database\Factories;
+
 use App\Models\Text;
-use Faker\Generator as Faker;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
-$factory->define(Text::class, fn(Faker $faker) => [
-    'route' => $faker->word,
-    'name' => $faker->word,
-    'content_sv' => $faker->sentence,
-    'content_en' => $faker->sentence,
-]);
+class TextFactory extends Factory
+{
+    protected $model = Text::class;
 
-$factory->state(Text::class, 'empty', [
-    'content_sv' => '',
-    'content_en' => '',
-]);
+    public function definition()
+    {
+        return [
+            'route' => $this->faker->word,
+            'name' => $this->faker->word,
+            'content_sv' => $this->faker->sentence,
+            'content_en' => $this->faker->sentence,
+        ];
+    }
 
-$factory->state(Text::class, 'short', fn(Faker $faker) => [
-    'content_sv' => $faker->paragraph(5),
-    'content_en' => $faker->paragraph(5),
-]);
+    public function empty()
+    {
+        return $this->state([
+            'content_sv' => '',
+            'content_en' => '',
+        ]);
+    }
 
-$factory->state(Text::class, 'long', fn(Faker $faker) => [
-    'content_sv' => $faker->paragraph(12),
-    'content_en' => $faker->paragraph(12),
-]);
+    public function short()
+    {
+        return $this->state([
+            'content_sv' => $this->faker->paragraph(5),
+            'content_en' => $this->faker->paragraph(5),
+        ]);
+    }
 
-$factory->state(Text::class, 'extra-long', fn(Faker $faker) => [
-    'content_sv' => '<p>' . $faker->paragraph(23) . '</p><p>' . $faker->paragraph(23) . '</p>',
-    'content_en' => '<p>' . $faker->paragraph(23) . '</p><p>' . $faker->paragraph(23) . '</p>',
-]);
+    public function long()
+    {
+        return $this->state([
+            'content_sv' => $this->faker->paragraph(12),
+            'content_en' => $this->faker->paragraph(12),
+        ]);
+    }
 
-$factory->state(Text::class, 'table', function (Faker $faker) {
-    $html = '<table class="table">'
-          . '<thead class="thead-light"><tr><th>Foo</th><th>Bar</th></tr></thead>'
-          . '<tbody><tr><td>Foz</td><td>Baz</td></tr></tbody>'
-          . '</table>';
+    public function extraLong()
+    {
+        return $this->state([
+            'content_sv' => '<p>' . $this->faker->paragraph(23) . '</p><p>' . $this->faker->paragraph(23) . '</p>',
+            'content_en' => '<p>' . $this->faker->paragraph(23) . '</p><p>' . $this->faker->paragraph(23) . '</p>',
+        ]);
+    }
 
-    return [
-        'content_sv' => $html,
-        'content_en' => $html,
-    ];
-});
+    public function table()
+    {
+        $html = <<<EOD
+            <table class="table">
+                <thead class="thead-light"><tr><th>Foo</th><th>Bar</th></tr></thead>
+                <tbody><tr><td>Foz</td><td>Baz</td></tr></tbody>
+            </table>
+            EOD;
+
+        return $this->state([
+            'content_sv' => $html,
+            'content_en' => $html,
+        ]);
+    }
+}

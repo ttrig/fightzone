@@ -1,17 +1,30 @@
 <?php
 
-use Faker\Generator as Faker;
+namespace Database\Factories;
+
 use App\Models\User;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
-$factory->define(User::class, fn(Faker $faker) => [
-    'name' => $faker->name,
-    'email' => $faker->unique()->safeEmail,
-    'password' => $faker->password,
-    'remember_token' => null,
-]);
+class UserFactory extends Factory
+{
+    protected $model = User::class;
 
-$factory->state(User::class, 'admin', [
-    'name' => 'admin',
-    'email' => 'admin@fightzone.se',
-    'password' => 'admin',
-]);
+    public function definition()
+    {
+        return [
+            'name' => $this->faker->name,
+            'email' => $this->faker->unique()->safeEmail,
+            'password' => $this->faker->password,
+            'remember_token' => null,
+        ];
+    }
+
+    public function admin()
+    {
+        return $this->state([
+            'name' => 'admin',
+            'email' => 'admin@fightzone.se',
+            'password' => 'admin',
+        ]);
+    }
+}

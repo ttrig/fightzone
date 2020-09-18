@@ -1,19 +1,31 @@
 <?php
 
+namespace Database\Factories;
+
 use App\Models\PaymentArticle;
-use Faker\Generator as Faker;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
-$factory->define(PaymentArticle::class, function (Faker $faker) {
-    static $number = 1000;
-    return [
-        'name_sv' => $faker->sentence(3),
-        'name_en' => $faker->sentence(3),
-        'content_sv' => $faker->paragraph(2),
-        'content_en' => $faker->paragraph(2),
-        'number' => $number++,
-        'price' => $faker->randomNumber(4),
-        'active' => true,
-    ];
-});
+class PaymentArticleFactory extends Factory
+{
+    protected $model = PaymentArticle::class;
 
-$factory->state(PaymentArticle::class, 'inactive', ['active' => false]);
+    public function definition()
+    {
+        return [
+            'name_sv' => $this->faker->sentence(3),
+            'name_en' => $this->faker->sentence(3),
+            'content_sv' => $this->faker->paragraph(2),
+            'content_en' => $this->faker->paragraph(2),
+            'number' => $this->faker->unique->numberBetween(1000, 9000),
+            'price' => $this->faker->randomNumber(4),
+            'active' => true,
+        ];
+    }
+
+    public function inactive()
+    {
+        return $this->state([
+            'active' => false,
+        ]);
+    }
+}

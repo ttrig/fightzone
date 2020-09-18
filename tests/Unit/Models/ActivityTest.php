@@ -9,7 +9,7 @@ class ActivityTest extends TestCase
 {
     public function test_getNameAttribute()
     {
-        $activity = factory(Activity::class)->make();
+        $activity = Activity::factory()->make();
 
         $this->assertNotEmpty($activity->name);
         $this->assertNotEquals($activity->slug, $activity->name);

@@ -12,12 +12,12 @@ class PriceTest extends TestCase
 
     public function test_index()
     {
-        $infoText = factory(Text::class)->create([
+        $infoText = Text::factory()->create([
             'route' => 'prices',
             'name' => 'info',
         ]);
 
-        $tablesText = factory(Text::class)->state('table')->create([
+        $tablesText = Text::factory()->table()->create([
             'route' => 'prices',
             'name' => 'tables',
         ]);

@@ -15,7 +15,7 @@ class TrainingTest extends TestCase
      */
     public function test_route($route)
     {
-        $infoText = factory(Text::class)->create([
+        $infoText = Text::factory()->create([
             'route' => $route,
             'name' => 'info',
         ]);

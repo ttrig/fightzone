@@ -24,7 +24,7 @@ class LoginTest extends TestCase
 
     public function test_login_success()
     {
-        $user = factory(User::class)->create(['password' => 'Passw0rd']);
+        $user = User::factory()->create(['password' => 'Passw0rd']);
 
         $postData = [
             'email' => $user->email,
@@ -41,7 +41,7 @@ class LoginTest extends TestCase
 
     public function test_login_when_authenticated()
     {
-        $user = factory(User::class)->make();
+        $user = User::factory()->make();
 
         $this->actingAs($user)
             ->get(route('login'))

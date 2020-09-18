@@ -12,7 +12,7 @@ class JoinTest extends TestCase
 
     public function test_index()
     {
-        $infoText = factory(Text::class)->create([
+        $infoText = Text::factory()->create([
             'route' => 'join',
             'name' => 'info',
         ]);

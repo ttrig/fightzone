@@ -16,7 +16,7 @@ class UserTest extends TestCase
     {
         parent::setUp();
 
-        $this->user = factory(User::class)->create();
+        $this->user = User::factory()->create();
         $this->be($this->user);
     }
 
@@ -136,7 +136,7 @@ class UserTest extends TestCase
 
     public function test_destroy_happy_path()
     {
-        $user = factory(User::class)->create();
+        $user = User::factory()->create();
 
         $this->delete(route('admin.user.destroy', $user))
             ->assertRedirect(route('admin.user.index'))

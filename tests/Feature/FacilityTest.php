@@ -12,7 +12,7 @@ class FacilityTest extends TestCase
 
     public function test_index()
     {
-        $infoText = factory(Text::class)->create([
+        $infoText = Text::factory()->create([
             'route' => 'facility',
             'name' => 'info',
         ]);

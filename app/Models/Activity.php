@@ -3,11 +3,13 @@
 namespace App\Models;
 
 use App\Traits\HasContent;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Activity extends Model
 {
     use HasContent;
+    use HasFactory;
 
     protected $guarded = ['*'];
 

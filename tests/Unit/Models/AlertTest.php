@@ -12,15 +12,17 @@ class AlertTest extends TestCase
 
     public function test_scopeIsActive()
     {
-        factory(Alert::class)->states('active')->create();
-        factory(Alert::class)->states('inactive')->create();
+        Alert::factory()->active()->create();
+        Alert::factory()->inactive()->create();
+
         $this->assertEquals(1, Alert::active()->count());
     }
 
     public function test_isActive()
     {
-        $alert1 = factory(Alert::class)->states('active')->make();
-        $alert2 = factory(Alert::class)->states('inactive')->make();
+        $alert1 = Alert::factory()->active()->make();
+        $alert2 = Alert::factory()->inactive()->make();
+
         $this->assertTrue($alert1->isActive());
         $this->assertFalse($alert2->isActive());
     }

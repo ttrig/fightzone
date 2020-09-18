@@ -15,12 +15,12 @@ class TextTest extends TestCase
     {
         parent::setUp();
 
-        $this->be(factory(User::class)->create());
+        $this->be(User::factory()->create());
     }
 
     public function test_index()
     {
-        $text = factory(Text::class)->create();
+        $text = Text::factory()->create();
 
         $this->get(route('admin.text.index'))
             ->assertOk()
@@ -34,7 +34,7 @@ class TextTest extends TestCase
 
     public function test_edit()
     {
-        $text = factory(Text::class)->create();
+        $text = Text::factory()->create();
 
         $this->get(route('admin.text.edit', $text))
             ->assertOk()
@@ -46,7 +46,7 @@ class TextTest extends TestCase
 
     public function test_update()
     {
-        $text = factory(Text::class)->create();
+        $text = Text::factory()->create();
 
         $text->content_sv = 'ny text';
         $text->content_en = 'new text';

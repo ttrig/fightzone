@@ -14,7 +14,7 @@ class HomeTest extends TestCase
 
     public function test_home()
     {
-        $text = factory(Text::class)->create([
+        $text = Text::factory()->create([
             'route' => 'home',
             'name' => 'fightzone',
         ]);
@@ -64,7 +64,7 @@ class HomeTest extends TestCase
 
     public function test_home_when_schedule_is_not_empty()
     {
-        $schedule = factory(Event::class)->create();
+        $schedule = Event::factory()->create();
 
         $this->get('/')
             ->assertOk()
@@ -78,7 +78,7 @@ class HomeTest extends TestCase
 
     public function test_home_with_alert()
     {
-        $alert = factory(Alert::class)->create();
+        $alert = Alert::factory()->create();
 
         $this->get('/')->assertOk()->assertSeeText($alert->content);
     }

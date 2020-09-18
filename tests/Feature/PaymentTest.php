@@ -5,7 +5,7 @@ namespace Tests\Feature;
 use App\Models\PaymentArticle;
 use App\Models\Text;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Log;
+use Illuminate\Support\Facades\Log;
 use Mockery as m;
 use Tests\TestCase;
 use Ttrig\Billmate\Article as BillmateArticle;
@@ -21,12 +21,12 @@ class PaymentTest extends TestCase
     {
         parent::setUp();
 
-        $this->article = factory(PaymentArticle::class)->create();
+        $this->article = PaymentArticle::factory()->create();
     }
 
     public function test_index()
     {
-        $infoText = factory(Text::class)->create([
+        $infoText = Text::factory()->create([
             'route' => 'payment.index',
             'name' => 'info',
         ]);

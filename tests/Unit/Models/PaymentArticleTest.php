@@ -13,7 +13,7 @@ class PaymentArticleTest extends TestCase
 
     public function test_getNameAttribute()
     {
-        $article = factory(PaymentArticle::class)->create();
+        $article = PaymentArticle::factory()->create();
 
         $this->assertEquals($article->name_sv, $article->name);
 
@@ -24,7 +24,7 @@ class PaymentArticleTest extends TestCase
 
     public function test_getFormattedPriceAttribute()
     {
-        $article = factory(PaymentArticle::class)->create(['price' => 1000]);
+        $article = PaymentArticle::factory()->create(['price' => 1000]);
 
         $this->assertEquals('1 000', $article->formatted_price);
 
@@ -35,7 +35,7 @@ class PaymentArticleTest extends TestCase
 
     public function test_billmateArticle()
     {
-        $article = factory(PaymentArticle::class)->create(['price' => 1000]);
+        $article = PaymentArticle::factory()->create(['price' => 1000]);
 
         $this->assertInstanceOf(BillmateArticle::class, $article->billmateArticle());
     }

@@ -12,7 +12,7 @@ class HasOpenMatTest extends TestCase
 
     public function test_content_is_cleared_when_open_mat()
     {
-        $class = factory(Event::class)->create();
+        $class = Event::factory()->create();
         $class->update(['is_open_mat' => true]);
 
         $this->assertNull($class->content_en);
@@ -21,7 +21,7 @@ class HasOpenMatTest extends TestCase
 
     public function test_content_is_the_same_when_not_open_mat()
     {
-        $class = factory(Event::class)->create();
+        $class = Event::factory()->create();
         $class->update(['is_open_mat' => false]);
 
         $this->assertNotEmpty($class->content_en);

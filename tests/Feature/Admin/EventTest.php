@@ -15,12 +15,12 @@ class EventTest extends TestCase
     {
         parent::setUp();
 
-        $this->be(factory(User::class)->create());
+        $this->be(User::factory()->create());
     }
 
     public function test_index()
     {
-        $event = factory(Event::class)->create();
+        $event = Event::factory()->create();
 
         $this->get(route('admin.event.index'))
             ->assertSeeText(__('app.activity.' . $event->activity->slug))
@@ -38,7 +38,7 @@ class EventTest extends TestCase
 
     public function test_edit()
     {
-        $event = factory(Event::class)->create();
+        $event = Event::factory()->create();
 
         $this->get(route('admin.event.edit', $event))
             ->assertOk()
@@ -61,7 +61,7 @@ class EventTest extends TestCase
 
     public function test_store_happy_path()
     {
-        $data = factory(Event::class)->make()->toArray();
+        $data = Event::factory()->make()->toArray();
 
         $this->post(route('admin.event.store', $data))
             ->assertSessionHasNoErrors()
@@ -73,7 +73,7 @@ class EventTest extends TestCase
 
     public function test_update_sad_path()
     {
-        $event = factory(Event::class)->create();
+        $event = Event::factory()->create();
 
         $this->put(route('admin.event.update', $event), [])
             ->assertSessionHasErrors([
@@ -86,7 +86,7 @@ class EventTest extends TestCase
 
     public function test_update_happy_path()
     {
-        $event = factory(Event::class)->create();
+        $event = Event::factory()->create();
 
         $this->put(route('admin.event.update', $event), $event->toArray())
             ->assertSessionHasNoErrors()
@@ -96,7 +96,7 @@ class EventTest extends TestCase
 
     public function test_disable()
     {
-        $event = factory(Event::class)->create();
+        $event = Event::factory()->create();
 
         $this->put(route('admin.event.disable', $event))
             ->assertRedirect(route('admin.event.index'))
@@ -107,7 +107,7 @@ class EventTest extends TestCase
 
     public function test_enable()
     {
-        $event = factory(Event::class)->state('disabled')->create();
+        $event = Event::factory()->disabled()->create();
 
         $this->put(route('admin.event.enable', $event))
             ->assertRedirect(route('admin.event.index'))
@@ -118,7 +118,7 @@ class EventTest extends TestCase
 
     public function test_destroy()
     {
-        $event = factory(Event::class)->create();
+        $event = Event::factory()->create();
 
         $this->delete(route('admin.event.destroy', $event))
             ->assertRedirect(route('admin.event.index'))

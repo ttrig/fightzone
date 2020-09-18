@@ -12,11 +12,11 @@ class TvTest extends TestCase
 
     public function test_index()
     {
-        $mondayClass = factory(Event::class)->create([
+        $mondayClass = Event::factory()->create([
             'dow' => 1,
         ]);
 
-        $fridayClass = factory(Event::class)->states('open-mat')->create([
+        $fridayClass = Event::factory()->openMat()->create([
             'dow' => 5,
         ]);
 

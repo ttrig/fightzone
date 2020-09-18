@@ -14,14 +14,14 @@ class KidsBjjTest extends TestCase
 
     public function test_index()
     {
-        $infoText = factory(Text::class)->create([
+        $infoText = Text::factory()->create([
             'route' => 'kids_bjj',
             'name' => 'info',
         ]);
 
-        $events = factory(Event::class, 4)->make();
+        $events = Event::factory(4)->make();
 
-        factory(Activity::class)
+        Activity::factory()
             ->create(['slug' => 'kids_bjj'])
             ->events()
             ->saveMany($events);

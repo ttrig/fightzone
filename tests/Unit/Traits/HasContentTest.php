@@ -12,7 +12,7 @@ class HasContentTest extends TestCase
 
     public function test_getContentAttribute()
     {
-        $alert = factory(Event::class)->make();
+        $alert = Event::factory()->make();
 
         $this->assertNotEmpty($alert->content);
     }

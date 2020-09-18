@@ -5,10 +5,12 @@ namespace App\Models;
 use App\Traits\HasContent;
 use App\Traits\HasOpenMat;
 use App\Traits\HasTimes;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Event extends AuditableModel
 {
     use HasContent;
+    use HasFactory;
     use HasOpenMat;
     use HasTimes;
 

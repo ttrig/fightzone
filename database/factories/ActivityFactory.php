@@ -1,21 +1,34 @@
 <?php
 
+namespace Database\Factories;
+
 use App\Models\Activity;
-use Faker\Generator as Faker;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
-$factory->define(Activity::class, fn(Faker $faker) => [
-    'slug' => $faker->randomElement([
-        'bjj',
-        'boxing',
-        'kickboxing',
-        'wrestling',
-        'nogi',
-        'sac',
-        'gym',
-        'kids-bjj',
-    ]),
-]);
+class ActivityFactory extends Factory
+{
+    protected $model = Activity::class;
 
-$factory->state(Activity::class, 'has-prices', fn(Faker $faker) => [
-    'slug' => $faker->randomElement(['bjj', 'boxing', 'kickboxing']),
-]);
+    public function definition()
+    {
+        return [
+            'slug' => $this->faker->randomElement([
+                'bjj',
+                'boxing',
+                'kickboxing',
+                'wrestling',
+                'nogi',
+                'sac',
+                'gym',
+                'kids-bjj',
+            ]),
+        ];
+    }
+
+    public function hasPrice()
+    {
+        return $this->state([
+            'slug' => $this->faker->randomElement(['bjj', 'boxing', 'kickboxing']),
+        ]);
+    }
+}

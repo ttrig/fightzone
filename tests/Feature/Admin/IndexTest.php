@@ -17,7 +17,7 @@ class IndexTest extends TestCase
 
     public function test_index_as_user()
     {
-        $user = factory(User::class)->create();
+        $user = User::factory()->create();
 
         $this->actingAs($user)->get(route('admin.index'))->assertOk();
     }

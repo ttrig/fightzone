@@ -5,7 +5,7 @@ namespace Tests\Unit\Mail;
 use App\Mail\OrderCreated;
 use Tests\TestCase;
 
-class LogOrderCreatedTest extends TestCase
+class OrderCreatedTest extends TestCase
 {
     public function test_listener()
     {

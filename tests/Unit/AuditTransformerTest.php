@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Unit\Traits;
+namespace Tests\Unit;
 
 use App\Models\Alert;
 use App\Models\Text;

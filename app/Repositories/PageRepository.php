@@ -12,8 +12,8 @@ class PageRepository
     public function alerts(): ?Collection
     {
         return Alert::active()
-            ->latest()
             ->orderBy('priority')
+            ->latest()
             ->get()
             ->filter(function ($alert) {
                 return empty($alert->routes)

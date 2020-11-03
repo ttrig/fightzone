@@ -49,6 +49,7 @@ class AlertTest extends TestCase
                 'class' => 'The class field is required.',
                 'from_date' => 'The from date field is required.',
                 'to_date' => 'The to date field is required.',
+                'priority' => 'The priority field is required.',
                 'content_en' => 'English content is required.',
                 'content_sv' => 'Swedish content is required.',
             ])
@@ -63,6 +64,7 @@ class AlertTest extends TestCase
         $data['from_date'] = now()->toDateString();
         $data['to_date'] = now()->addHour()->toDateString();
         $data['routes'] = [Alert::AVAILABLE_ROUTES[0]];
+        $data['priority'] = 1;
 
         $this->post(route('admin.alert.store', $data))
             ->assertSessionHasNoErrors()
@@ -86,6 +88,7 @@ class AlertTest extends TestCase
                 'class' => 'The class field is required.',
                 'from_date' => 'The from date field is required.',
                 'to_date' => 'The to date field is required.',
+                'priority' => 'The priority field is required.',
                 'content_en' => 'English content is required.',
                 'content_sv' => 'Swedish content is required.',
             ])
@@ -101,6 +104,7 @@ class AlertTest extends TestCase
         $data = $alert->toArray();
         $data['from_date'] = now()->toDateString();
         $data['to_date'] = now()->addHour()->toDateString();
+        $data['priority'] = 2;
         $data['routes'] = '';
 
         $this->put(route('admin.alert.update', $alert), $data)
@@ -112,6 +116,7 @@ class AlertTest extends TestCase
 
         $this->assertEquals($data['from_date'], $alert->from_date->toDateString());
         $this->assertEquals($data['to_date'], $alert->to_date->toDateString());
+        $this->assertEquals(2, $alert->priority);
         $this->assertNull($alert->routes);
     }
 

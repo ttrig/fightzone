@@ -35,6 +35,7 @@ class CreateAlert extends FormRequest
             'class' => ['required', Rule::in(Alert::COLORS)],
             'from_date' => 'required|date_format:Y-m-d|before_or_equal:to_date',
             'to_date' => 'required|date_format:Y-m-d|after_or_equal:from_date',
+            'priority' => 'required|integer|between:1,9',
             'content_en' => 'required|max:4096',
             'content_sv' => 'required|max:4096',
             'routes' => 'nullable|array',

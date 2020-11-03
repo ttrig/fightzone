@@ -20,6 +20,7 @@ class Fightzone extends Migration
             $table->text('routes')->nullable();
             $table->date('from_date');
             $table->date('to_date');
+            $table->unsignedTinyInteger('priority')->default(1);
             $table->text('content_sv');
             $table->text('content_en');
             $table->timestamps();

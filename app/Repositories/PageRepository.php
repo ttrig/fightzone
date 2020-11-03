@@ -13,6 +13,7 @@ class PageRepository
     {
         return Alert::active()
             ->latest()
+            ->orderBy('priority')
             ->get()
             ->filter(function ($alert) {
                 return empty($alert->routes)

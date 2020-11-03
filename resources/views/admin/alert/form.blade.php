@@ -133,6 +133,23 @@
                   </small>
                 </div>
 
+                <div class="form-group">
+                  <label class="control-label">Priority</label>
+                  <input
+                    type="number"
+                    min="1"
+                    max="9"
+                    class="form-control"
+                    name="priority"
+                    placeholder="1-9"
+                    autocomplete="off"
+                    value="{{ $alert->exists ? $alert->priority : old('priority', 1) }}"
+                  >
+                  <small class="form-text text-muted">
+                    Alerts will be ordered (ascending) by their priority value.
+                  </small>
+                </div>
+
               </div>
 
               <div class="col-md-8">

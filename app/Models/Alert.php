@@ -42,7 +42,6 @@ class Alert extends AuditableModel
         return $query
             ->where('from_date', '<=', $now)
             ->where('to_date', '>', $now)
-            ->orderBy('from_date')
         ;
     }
 

@@ -69,6 +69,20 @@ class PaymentTest extends TestCase
         );
     }
 
+    public function test_getMonthlyCosts_when_no_plans_is_available()
+    {
+        $this->mock(BillmateService::class)
+            ->expects()
+            ->getPaymentPlans(m::type(BillmateArticle::class))
+            ->andReturn([])
+        ;
+
+        $this->getJson(route('payment.monthly-costs'))
+            ->assertOk()
+            ->assertJson([])
+        ;
+    }
+
     public function test_getMonthlyCosts_aborts_on_normal_request()
     {
         $this->mock(BillmateService::class);

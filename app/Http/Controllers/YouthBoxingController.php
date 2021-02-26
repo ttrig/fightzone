@@ -8,7 +8,7 @@ class YouthBoxingController extends Controller
 {
     public function __invoke(PageRepository $page)
     {
-        return view('youth_boxing', [
+        return view('youth_kickboxing', [
             'alerts' => $page->alerts(),
             'texts' => $page->texts(),
         ]);

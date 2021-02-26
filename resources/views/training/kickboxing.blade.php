@@ -3,6 +3,12 @@
 @include('training._header', [
   'slug'  => 'kickboxing',
   'title' => __('app.activity.kickboxing'),
+  'extraButtons' => [
+    [
+      'route' => route('youth_kickboxing'),
+      'text' => __('app.activity.youth_kickboxing'),
+    ],
+  ],
 ])
 <div class="container">
   <div class="row">

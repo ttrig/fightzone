@@ -73,8 +73,14 @@ class DatabaseSeeder extends Seeder
 
     private function seedSchedule()
     {
-        $this->activities->each(function ($activity) {
-            Event::factory(5)->random()->create(['activity_id' => $activity->id]);
+        $dow = 0;
+        $this->activities->each(function ($activity) use (&$dow) {
+            for ($i = 0; $i < 3; $i++) {
+                Event::factory()->random()->create([
+                    'dow' => ($dow++ % 7) + 1,
+                    'activity_id' => $activity->id,
+                ]);
+            }
         });
     }
 

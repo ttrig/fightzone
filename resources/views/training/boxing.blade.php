@@ -5,8 +5,8 @@
   'title' => __('app.activity.boxing'),
   'extraButtons' => [
     [
-      'route' => route('kids_boxing'),
-      'text' => __('app.activity.kids_boxing'),
+      'route' => route('youth_boxing'),
+      'text' => __('app.activity.youth_boxing'),
     ],
   ],
 ])

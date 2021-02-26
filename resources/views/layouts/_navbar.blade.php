@@ -63,8 +63,8 @@ $lang_link = app()->isLocale('sv') ? 'en' : 'sv';
               <a class="dropdown-item" href="{{ route('boxing') }}">
                 @lang('app.activity.boxing')
               </a>
-              <a class="dropdown-item" href="{{ route('kids_boxing') }}">
-                @lang('app.activity.kids_boxing')
+              <a class="dropdown-item" href="{{ route('youth_boxing') }}">
+                @lang('app.activity.youth_boxing')
               </a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="{{ route('kickboxing') }}">

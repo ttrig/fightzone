@@ -33,12 +33,6 @@ class CarouselRepository
                 'image' => '/images/carousel/kickboxing.jpg',
             ],
             [
-                'title' => __('app.activity.wrestling'),
-                'text'  => 'wrestling',
-                'route' => 'wrestling',
-                'image' => '/images/carousel/wrestling.jpg'
-            ],
-            [
                 'title' => __('app.activity.nogi'),
                 'text'  => 'nogi',
                 'route' => 'nogi',

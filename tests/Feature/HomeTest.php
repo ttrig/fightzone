@@ -37,7 +37,6 @@ class HomeTest extends TestCase
                 __('app.activity.bjj'),
                 __('app.activity.boxing'),
                 __('app.activity.kickboxing'),
-                __('app.activity.wrestling'),
                 __('app.activity.nogi'),
                 __('app.activity.sac'),
                 __('app.activity.gym'),

@@ -5,14 +5,14 @@
     "type": "project",
     "license": "MIT",
     "require": {
-        "php": "^7.4",
-        "davejamesmiller/laravel-breadcrumbs": "5.*",
+        "php": "^8.0",
+        "diglactic/laravel-breadcrumbs": "^6.0",
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^8.12",
         "laravel/tinker": "^2.5",
-        "laravel/ui": "^2.0",
+        "laravel/ui": "^3.0",
         "mews/purifier": "~3.0",
         "owen-it/laravel-auditing": "^10",
         "ttrig/laravel-billmate": "^1.2"

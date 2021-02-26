@@ -44,7 +44,7 @@ class TextTest extends TestCase
         ;
     }
 
-    public function test_update()
+    public function test_update_with_redirect_to_index()
     {
         $text = Text::factory()->create();
 
@@ -59,6 +59,19 @@ class TextTest extends TestCase
 
         $this->assertEquals('ny text', $text->content_sv);
         $this->assertEquals('new text', $text->content_en);
+    }
+
+    public function test_update_with_redirect_back()
+    {
+        $text = Text::factory()->create();
+
+        $data = $text->toArray() + ['redirect' => false];
+
+        $this->from(route('admin.text.update', $text))
+            ->put(route('admin.text.update', $text), $data)
+            ->assertSessionHasNoErrors()
+            ->assertRedirect(route('admin.text.update', $text))
+        ;
     }
 
     public function test_update_missing_text()

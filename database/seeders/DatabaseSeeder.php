@@ -37,7 +37,6 @@ class DatabaseSeeder extends Seeder
             'boxing',
             'kickboxing',
             'nogi',
-            'wrestling',
             'sac',
             'kids_bjj',
         ];

@@ -16,7 +16,6 @@ class ActivityFactory extends Factory
                 'bjj',
                 'boxing',
                 'kickboxing',
-                'wrestling',
                 'nogi',
                 'sac',
                 'gym',

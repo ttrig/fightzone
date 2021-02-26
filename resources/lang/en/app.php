@@ -27,7 +27,6 @@ return [
         'bjj' => 'Brazilian Jiu-jitsu',
         'boxing' => 'Boxing',
         'kickboxing' => 'Thai/Kickboxing',
-        'wrestling' => 'Freestyle wrestling',
         'nogi' => 'Submission wrestling',
         'sac' => 'Strength and conditioning',
         'gym' => 'Gym',

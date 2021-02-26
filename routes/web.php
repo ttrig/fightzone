@@ -21,6 +21,7 @@ Route::get('schedule', ScheduleController::class)->name('schedule');
 Route::get('prices', PriceController::class)->name('prices');
 Route::get('kids-bjj', KidsBjjController::class)->name('kids_bjj');
 Route::get('youth-boxing', YouthBoxingController::class)->name('youth_boxing');
+Route::get('youth-kickboxing', YouthBoxingController::class)->name('youth_kickboxing');
 Route::get('join', JoinController::class)->name('join');
 Route::get('history', HistoryController::class)->name('history');
 Route::get('facility', FacilityController::class)->name('facility');

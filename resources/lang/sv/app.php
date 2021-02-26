@@ -32,6 +32,7 @@ return [
         'sac' => 'Styrka och kondition',
         'gym' => 'Gym',
         'youth_boxing' => 'Ungdomsboxning',
+        'youth_kickboxing' => 'Ungdomskickboxning',
         'kids_bjj' => 'Barn BJJ',
     ],
 
@@ -126,6 +127,12 @@ return [
     'youth_boxing' => [
         'title' => 'Ungdomsboxning',
         'more' => 'Läs mer om boxning',
+    ],
+
+    # page: youth-kickboxing
+    'youth_kickboxing' => [
+        'title' => 'Ungdomskickboxning',
+        'more' => 'Läs mer om kickboxning',
     ],
 
     # page: history

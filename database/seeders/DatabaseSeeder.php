@@ -109,6 +109,7 @@ class DatabaseSeeder extends Seeder
 
         Text::factory()->extraLong()->create(['route' => 'kids_bjj', 'name' => 'info']);
         Text::factory()->extraLong()->create(['route' => 'youth_boxing', 'name' => 'info']);
+        Text::factory()->extraLong()->create(['route' => 'youth_kickboxing', 'name' => 'info']);
 
         Text::factory()->long()->create(['route' => 'payment.index', 'name' => 'info']);
     }

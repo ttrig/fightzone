@@ -32,6 +32,7 @@ return [
         'sac' => 'Strength and conditioning',
         'gym' => 'Gym',
         'youth_boxing' => 'Youth boxing',
+        'youth_kickboxing' => 'Youth kickboxing',
         'kids_bjj' => 'Kids BJJ',
     ],
 
@@ -126,6 +127,12 @@ return [
     'youth_boxing' => [
         'title' => 'Youth boxing',
         'more' => 'More about boxing',
+    ],
+
+    # page: youth-kickboxing
+    'youth_kickboxing' => [
+        'title' => 'Youth kickboxing',
+        'more' => 'More about kickboxing',
     ],
 
     # page: history

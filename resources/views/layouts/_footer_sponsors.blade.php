@@ -37,6 +37,12 @@
             data-src="/images/sponsors/kakelmiljo_i_skane.png"
             alt="Kakelmilj&ouml; i Sk&aring;ne"
           ></a>
+        <a href="https://www.apexrehab.se" target="_blank">
+          <img
+            class="lazy"
+            data-src="/images/sponsors/apex_rehab.png"
+            alt="Apex Rehab"
+          ></a>
       </div>
     </div>
   </div>

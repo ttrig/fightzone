@@ -19,12 +19,6 @@
             data-src="/images/sponsors/mabi_hyrbilar.png"
             alt="Mabi Hyrbilar"
           ></a>
-        <a href="https://ultraclean.se" target="_blank">
-          <img
-            class="lazy"
-            data-src="/images/sponsors/ultra_clean.png"
-            alt="Ultra Clean"
-          ></a>
         <a href="http://www.beve.se" target="_blank">
           <img
             class="lazy"

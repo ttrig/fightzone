@@ -43,6 +43,12 @@
             data-src="/images/sponsors/apex_rehab.png"
             alt="Apex Rehab"
           ></a>
+        <a href="https://www.baltzartandvard.se" target="_blank">
+          <img
+            class="lazy"
+            data-src="/images/sponsors/baltzartandvard.png"
+            alt="Baltzar Tandv&aring;rd"
+          ></a>
       </div>
     </div>
   </div>

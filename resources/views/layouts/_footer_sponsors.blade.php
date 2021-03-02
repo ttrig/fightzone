@@ -25,12 +25,6 @@
             data-src="/images/sponsors/beve.png"
             alt="Beve"
           ></a>
-        <a href="http://lommabilcenter.se" target="_blank">
-          <img
-            class="lazy"
-            data-src="/images/sponsors/lomma_bilcenter.png"
-            alt="Lomma bilcenter"
-          ></a>
         <a href="http://www.worx.nu" target="_blank">
           <img
             class="lazy"

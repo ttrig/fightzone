@@ -28,7 +28,7 @@
     </div>
     <div class="col-md-4">
       @include('common.instructor', [
-        'name' => 'Jonas Åmno',
+        'name' => 'Jonas Ånmo',
         'image' => '/images/instructors/kick_jonas.jpg',
       ])
     </div>

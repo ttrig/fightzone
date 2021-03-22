@@ -49,6 +49,12 @@
             data-src="/images/sponsors/baltzartandvard.png"
             alt="Baltzar Tandv&aring;rd"
           ></a>
+        <a href="https://www.unitedgross.com" target="_blank">
+          <img
+            class="lazy"
+            data-src="/images/sponsors/united_gross.png"
+            alt="United Gross"
+          ></a>
       </div>
     </div>
   </div>

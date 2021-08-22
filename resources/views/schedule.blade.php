@@ -91,7 +91,7 @@
               {{ $schedule->from_time }} - {{ $schedule->to_time }}
               @if ($schedule->is_open_mat)
                 &middot;
-                Open mat <i class="fas fa-question-circle"></i>
+                Open mat
               @elseif ($schedule->content)
                 &middot;
                 {{ $schedule->content }}

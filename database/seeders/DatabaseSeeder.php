@@ -38,6 +38,7 @@ class DatabaseSeeder extends Seeder
             'kickboxing',
             'nogi',
             'sac',
+            'youth_bjj',
             'kids_bjj',
         ];
 
@@ -107,6 +108,7 @@ class DatabaseSeeder extends Seeder
         Text::factory()->long()->create(['route' => 'facility', 'name' => 'info']);
 
         Text::factory()->extraLong()->create(['route' => 'kids_bjj', 'name' => 'info']);
+        Text::factory()->extraLong()->create(['route' => 'youth_bjj', 'name' => 'info']);
         Text::factory()->extraLong()->create(['route' => 'youth_boxing', 'name' => 'info']);
         Text::factory()->extraLong()->create(['route' => 'youth_kickboxing', 'name' => 'info']);
 

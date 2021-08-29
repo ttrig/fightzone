@@ -15,6 +15,7 @@ class ScheduleTransformer
         5 => 'DarkRed',
         6 => 'DarkMagenta',
         7 => 'HotPink',
+        8 => 'DarkRed',
     ];
 
     /**
@@ -63,6 +64,11 @@ class ScheduleTransformer
                 'slug' => 'bjj',
                 'route' => 'bjj',
                 'title' => __('app.activity.bjj'),
+            ],
+            [
+                'slug' => 'youth_bjj',
+                'route' => 'youth_bjj',
+                'title' => __('app.activity.youth_bjj'),
             ],
             [
                 'slug' => 'kids_bjj',

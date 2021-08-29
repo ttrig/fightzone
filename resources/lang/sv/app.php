@@ -33,6 +33,7 @@ return [
         'youth_boxing' => 'Ungdomsboxning',
         'youth_kickboxing' => 'Ungdomskickboxning',
         'kids_bjj' => 'Barn BJJ',
+        'youth_bjj' => 'Ungdom BJJ',
     ],
 
     # instructors
@@ -112,6 +113,14 @@ return [
             7 => 'Söndag',
         ],
         'no_classes' => 'Inga tider just nu.',
+    ],
+
+    # page: youth-bjj
+    'youth_bjj' => [
+        'title' => 'Ungdom BJJ',
+        'modal_schedule_show' => 'Visa schema',
+        'modal_schedule_title' => 'Schema ungdom BJJ',
+        'more' => 'Läs mer om BJJ',
     ],
 
     # page: kids-bjj

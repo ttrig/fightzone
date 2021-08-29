@@ -33,6 +33,7 @@ return [
         'youth_boxing' => 'Youth boxing',
         'youth_kickboxing' => 'Youth kickboxing',
         'kids_bjj' => 'Kids BJJ',
+        'youth_bjj' => 'Youth BJJ',
     ],
 
     # instructors
@@ -112,6 +113,14 @@ return [
             7 => 'Sunday',
         ],
         'no_classes' => 'No scheduled classes right now.',
+    ],
+
+    # page: youth-bjj
+    'youth_bjj' => [
+        'title' => 'Youth BJJ',
+        'modal_schedule_show' => 'Show schedule',
+        'modal_schedule_title' => 'Youth schedule',
+        'more' => 'More about BJJ',
     ],
 
     # page: kids-bjj

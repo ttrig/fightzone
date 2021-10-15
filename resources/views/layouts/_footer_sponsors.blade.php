@@ -1,11 +1,11 @@
 <section class="footer-sponsors bg-secondary w-100">
   <div class="container text-center">
-    <div class="row pt-3">
+    <div class="row my-3">
       <div class="col-md-12 text-dark text-uppercase">
         @lang('app.sponsors')
       </div>
     </div>
-    <div class="row p-3">
+    <div class="row my-3">
       <div class="col-md-12">
         <a href="https://pampasreklam.se" target="_blank">
           <img
@@ -53,6 +53,12 @@
           <img
             class="lazy"
             data-src="/images/sponsors/united_gross.png"
+            alt="United Gross"
+          ></a>
+        <a href="https://www.folketsbygg.com" target="_blank">
+          <img
+            class="lazy"
+            data-src="/images/sponsors/folkets_bygg.png"
             alt="United Gross"
           ></a>
       </div>

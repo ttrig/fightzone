@@ -11,6 +11,10 @@ $instructors = [
   'title' => __('app.activity.bjj'),
   'extraButtons' => [
     [
+      'route' => route('youth_bjj'),
+      'text' => __('app.youth_bjj.title'),
+    ],
+    [
       'route' => route('kids_bjj'),
       'text' => __('app.kids_bjj.title'),
     ],

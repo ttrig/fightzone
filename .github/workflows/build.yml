@@ -35,7 +35,7 @@ jobs:
         run: composer install --prefer-dist --no-interaction --no-ansi --no-progress
 
       - name: Install NPM dependencies
-        run: npm install --no-audit --no-optional
+        run: npm ci --no-audit
 
       - name: Compile assets
         run: npm run production

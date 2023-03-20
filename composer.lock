@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "601812fa2cfeffa13a9fc9b7ae9565d1",
+    "content-hash": "3d43010eb8f61e5a4bac205e19fdf2ce",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -5619,22 +5619,22 @@
         },
         {
             "name": "ttrig/laravel-billmate",
-            "version": "v1.2.0",
+            "version": "v2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ttrig/laravel-billmate.git",
-                "reference": "f961d66b2a673929a8e3f208cad9ab216dfb2cc3"
+                "reference": "1b12375e5bfa1f7ba209c6e45a58e3a47f917821"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ttrig/laravel-billmate/zipball/f961d66b2a673929a8e3f208cad9ab216dfb2cc3",
-                "reference": "f961d66b2a673929a8e3f208cad9ab216dfb2cc3",
+                "url": "https://api.github.com/repos/ttrig/laravel-billmate/zipball/1b12375e5bfa1f7ba209c6e45a58e3a47f917821",
+                "reference": "1b12375e5bfa1f7ba209c6e45a58e3a47f917821",
                 "shasum": ""
             },
             "require": {
                 "guzzlehttp/guzzle": "^6.3|^7.0.1",
                 "illuminate/support": "^7.0|^8.0",
-                "php": "^7.4|^8.0"
+                "php": "^7.4"
             },
             "require-dev": {
                 "graham-campbell/testbench": "^5.5",
@@ -5676,9 +5676,9 @@
             ],
             "support": {
                 "issues": "https://github.com/ttrig/laravel-billmate/issues",
-                "source": "https://github.com/ttrig/laravel-billmate/tree/v1.2.0"
+                "source": "https://github.com/ttrig/laravel-billmate/tree/v2.0.0"
             },
-            "time": "2021-01-14T18:53:58+00:00"
+            "time": "2023-03-20T21:34:20+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -8563,5 +8563,5 @@
         "php": "^7.4"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "2.3.0"
 }

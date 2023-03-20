@@ -15,7 +15,7 @@
         "laravel/ui": "^2.0",
         "mews/purifier": "~3.0",
         "owen-it/laravel-auditing": "^10",
-        "ttrig/laravel-billmate": "^1.2"
+        "ttrig/laravel-billmate": "^2.0"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.5",

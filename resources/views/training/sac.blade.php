@@ -6,6 +6,21 @@
 ])
 
 <div class="container">
+  <div class="row">
+    <div class="col-md-4 offset-md-4">
+      <h3>
+        @lang('app.instructor')
+      </h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4 offset-md-4">
+      @include('common.instructor', [
+        'name' => 'Peter',
+        'image' => '/images/instructors/sac_peter.jpg',
+      ])
+    </div>
+  </div>
   <div class="row mb-4">
     <div class="col-md-6 text-center">
       <p>

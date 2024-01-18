@@ -6,9 +6,12 @@
       </div>
     </div>
     <div class="row my-3">
-      <div class="col-md-12">
-        <a href="http://www.worx.nu" target="_blank">
-          <img class="lazy" data-src="/images/sponsors/worx.png" alt="Worx">
+      <div class="col-md-12 d-md-flex flex-md-row justify-content-md-center align-items-md-center">
+        <a href="https://www.kondektor.se/" target="_blank">
+          <img class="lazy" data-src="/images/sponsors/kondektor.png" alt="Kondektor">
+        </a>
+        <a href="https://www.q-bygg.com/" target="_blank">
+          <img class="lazy" data-src="/images/sponsors/q-bygg.png" alt="Q-bygg">
         </a>
       </div>
     </div>

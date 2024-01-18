@@ -31,9 +31,13 @@ footer {
     .footer-sponsors {
         img {
             max-width: 14em;
-            max-height: 1.6em;
+            max-height: 2.6em;
             padding: 0 0.8em;
             margin: 0.6em auto;
+        }
+
+        a:hover {
+            text-decoration: none;
         }
     }
 

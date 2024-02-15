@@ -44,6 +44,7 @@ Route::get('kickboxing', TrainingController::class)->name('kickboxing');
 Route::redirect('/nogi', '/');
 Route::get('sac', TrainingController::class)->name('sac');
 Route::get('gym', TrainingController::class)->name('gym');
+Route::get('armwrestling', TrainingController::class)->name('armwrestling');
 
 # payment
 Route::group(['prefix' => 'payment', 'as' => 'payment.'], function () {

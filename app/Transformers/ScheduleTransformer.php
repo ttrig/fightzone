@@ -90,6 +90,11 @@ class ScheduleTransformer
                 'route' => 'sac',
                 'title' => __('app.activity.sac'),
             ],
+            [
+                'slug' => 'armwrestling',
+                'route' => 'armwrestling',
+                'title' => __('app.activity.armwrestling'),
+            ],
         ]);
 
         return $items->map(function ($item) use ($events) {

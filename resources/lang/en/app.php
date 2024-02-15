@@ -34,6 +34,7 @@ return [
         'youth_kickboxing' => 'Youth kickboxing',
         'kids_bjj' => 'Kids BJJ',
         'youth_bjj' => 'Youth BJJ',
+        'armwrestling' => 'Armwrestling',
     ],
 
     # instructors

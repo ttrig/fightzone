@@ -86,11 +86,6 @@ class ScheduleTransformer
                 'title' => __('app.activity.boxing'),
             ],
             [
-                'slug' => 'nogi',
-                'route' => 'nogi',
-                'title' => __('app.activity.nogi') . ' (no-gi)',
-            ],
-            [
                 'slug' => 'sac',
                 'route' => 'sac',
                 'title' => __('app.activity.sac'),

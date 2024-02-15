@@ -41,7 +41,7 @@ Route::get('tv', TvController::class)->name('tv');
 Route::get('bjj', TrainingController::class)->name('bjj');
 Route::get('boxing', TrainingController::class)->name('boxing');
 Route::get('kickboxing', TrainingController::class)->name('kickboxing');
-Route::get('nogi', TrainingController::class)->name('nogi');
+Route::redirect('/nogi', '/');
 Route::get('sac', TrainingController::class)->name('sac');
 Route::get('gym', TrainingController::class)->name('gym');
 

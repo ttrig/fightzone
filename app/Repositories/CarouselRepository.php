@@ -32,12 +32,6 @@ class CarouselRepository
                 'route' => 'kickboxing',
                 'image' => '/images/carousel/kickboxing.jpg',
             ],
-            [
-                'title' => __('app.activity.nogi'),
-                'text'  => 'nogi',
-                'route' => 'nogi',
-                'image' => '/images/carousel/nogi.jpg'
-            ],
         ]);
     }
 }

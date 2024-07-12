@@ -33,7 +33,6 @@ class TrainingTest extends TestCase
             ['bjj'],
             ['boxing'],
             ['kickboxing'],
-            ['nogi'],
             ['sac'],
             ['gym'],
         ];

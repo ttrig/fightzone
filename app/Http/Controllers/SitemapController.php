@@ -67,10 +67,6 @@ class SitemapController extends Controller
             'changefreq' => 'monthly',
             'priority' => '0.4',
         ],
-        'nogi' => [
-            'changefreq' => 'monthly',
-            'priority' => '0.4',
-        ],
         'sac' => [
             'changefreq' => 'monthly',
             'priority' => '0.4',

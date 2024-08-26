@@ -10,9 +10,6 @@
         <a href="https://www.kondektor.se/" target="_blank">
           <img class="lazy" data-src="/images/sponsors/kondektor.png" alt="Kondektor">
         </a>
-        <a href="https://www.q-bygg.com/" target="_blank">
-          <img class="lazy" data-src="/images/sponsors/q-bygg.png" alt="Q-bygg">
-        </a>
       </div>
     </div>
   </div>

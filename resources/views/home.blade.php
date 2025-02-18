@@ -85,7 +85,7 @@ $(function() {
           @lang('app.home.more_about_fightzone')
         </a>
         <a
-          href="https://register.sportadmin.se/pop/ko.asp?ID=562190877"
+          href="https://entry.sportadmin.se/groupsOverview?uid=SyMrod"
           class="btn btn-info mt-2"
           role="button"
           target="_blank"

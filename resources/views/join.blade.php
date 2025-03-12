@@ -16,7 +16,7 @@
         @lang('app.join.prices')
       </a>
       <a
-        href="https://register.sportadmin.se/pop/ko.asp?ID=562190877"
+        href="{{ config('fightzone.join_url') ?: '#' }}"
         target="_blank"
         class="btn btn-secondary"
       >

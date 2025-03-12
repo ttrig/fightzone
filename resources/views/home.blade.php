@@ -85,7 +85,7 @@ $(function() {
           @lang('app.home.more_about_fightzone')
         </a>
         <a
-          href="https://entry.sportadmin.se/groupsOverview?uid=SyMrod"
+          href="{{ config('fightzone.join_url') ?: '#' }}"
           class="btn btn-info mt-2"
           role="button"
           target="_blank"
